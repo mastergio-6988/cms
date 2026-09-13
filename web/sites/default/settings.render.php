@@ -1,10 +1,19 @@
 <?php
+$app_root = dirname(dirname(__DIR__));
+$site_path = 'sites/default';
+$default_settings = $app_root . '/' . $site_path . '/default.settings.php';
+if (is_readable($default_settings)) {
+  require $default_settings;
+}
+
+$database_url = getenv('DATABASE_URL');
+$database = $database_url ? parse_url($database_url) : [];
 $databases['default']['default'] = [
-  'database' => getenv('DB_DATABASE') ?: getenv('POSTGRES_DB') ?: 'drupal',
-  'username' => getenv('DB_USERNAME') ?: getenv('POSTGRES_USER') ?: 'drupal',
-  'password' => getenv('DB_PASSWORD') ?: getenv('POSTGRES_PASSWORD') ?: '',
-  'host' => getenv('DB_HOST') ?: getenv('POSTGRES_HOST') ?: '127.0.0.1',
-  'port' => getenv('DB_PORT') ?: getenv('POSTGRES_PORT') ?: '5432',
+  'database' => $database['path'] ? ltrim($database['path'], '/') : (getenv('DB_DATABASE') ?: getenv('POSTGRES_DB') ?: 'drupal'),
+  'username' => $database['user'] ?? (getenv('DB_USERNAME') ?: getenv('POSTGRES_USER') ?: 'drupal'),
+  'password' => $database['pass'] ?? (getenv('DB_PASSWORD') ?: getenv('POSTGRES_PASSWORD') ?: ''),
+  'host' => $database['host'] ?? (getenv('DB_HOST') ?: getenv('POSTGRES_HOST') ?: '127.0.0.1'),
+  'port' => $database['port'] ?? (getenv('DB_PORT') ?: getenv('POSTGRES_PORT') ?: '5432'),
   'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
   'driver' => getenv('DB_DRIVER') ?: 'pgsql',
   'prefix' => '',
