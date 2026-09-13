@@ -1,7 +1,7 @@
 FROM php:8.4-apache
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/web
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends git unzip libicu-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev libzip-dev libpq-dev \
+  && apt-get install -y --no-install-recommends git unzip libicu-dev libonig-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev libzip-dev libpq-dev \
   && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install -j"$(nproc)" gd intl mbstring opcache pdo_mysql pdo_pgsql zip \
   && a2enmod rewrite headers \
