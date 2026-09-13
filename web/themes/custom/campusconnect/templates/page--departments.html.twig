@@ -1,0 +1,585 @@
+{{ attach_library('campusconnect/departments_events_exact') }}
+{% do attach_library('campusconnect/events') %}
+{% do attach_library('campusconnect/events_polish') %}
+
+<header class="cc-header">
+  <div class="cc-header-inner">
+
+    <a href="/" class="cc-brand">
+      <span class="cc-logo">C</span>
+      <span class="cc-brand-text">
+        <strong>CampusConnect</strong>
+        <small>HIGHER EDUCATION</small>
+      </span>
+    </a>
+
+    <nav class="cc-nav">
+      <a href="/">Home</a>
+      <a href="/announcements">Announcements</a>
+      <a href="/campus-news">News</a>
+      <a href="/events">Events</a>
+      <a href="/departments" class="active">Departments</a>
+      <a href="/faculty-staff">People</a>
+    </nav>
+
+    <div class="cc-search">
+      <span>⌕</span>
+      <input type="search" placeholder="Search...">
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<section class="cc-hero">
+  <div class="cc-hero-content">
+    <div class="cc-eyebrow">
+      <span></span>
+      CAMPUSCONNECT / ON CAMPUS
+      <span></span>
+    </div>
+
+    <h1>Departments</h1>
+
+    <p>
+      Lectures, orientations, student activities, seminars,
+      workshops, competitions, and community events with clear
+      dates and locations.
+    </p>
+
+    <div class="cc-pills">
+        <span>Academic community</span>
+        <span>Programs &amp; learning</span>
+        <span>CampusConnect</span>
+      </div>
+  </div>
+
+  <div class="cc-hero-art"><img src="/sites/default/files/campusconnect-library/departments/departments-02-file-digital-computer-laboratory-jpg.jpg" alt="CampusConnect Departments"></div>
+</section>
+
+<section class="cc-events-section cc-card-collection" aria-labelledby="cc-departments-list-title">
+
+  <div class="cc-collection-heading">
+    <span>Academic community</span>
+    <h2 id="cc-departments-list-title">Explore our departments</h2>
+    <p>Discover the people, programs, and practical learning behind campus life.</p>
+  </div>
+
+  <div class="cc-event-grid">
+
+      <article class="cc-event-card">
+        <div class="cc-event-image">
+          <img src="/sites/default/files/campusconnect-library/departments/departments-05-file-construction-of-central-science-laboratories-at-ke.jpg" alt="Agricultural Department">
+          <span class="cc-date">01</span>
+        </div>
+        <div class="cc-event-body">
+          <div class="cc-meta">
+            <span>ACADEMIC DEPARTMENT</span>
+            <span>CampusConnect</span>
+          </div>
+          <h2>Agricultural Department</h2>
+          <p>Explore agricultural education, practical learning, sustainable development, food systems, and opportunities supporting the university and surrounding community.</p>
+          <div class="cc-event-footer">
+            <span>EXPLORE</span>
+            <a href="#department-modal" class="cc-department-view" data-department-view>View department&nbsp; →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cc-event-card">
+        <div class="cc-event-image">
+          <img src="/sites/default/files/campusconnect-library/departments/departments-01-file-computer-centre-laboratory-back-view-at-obafemi-aw.jpg" alt="Information Technology Department">
+          <span class="cc-date">02</span>
+        </div>
+        <div class="cc-event-body">
+          <div class="cc-meta">
+            <span>ACADEMIC DEPARTMENT</span>
+            <span>CampusConnect</span>
+          </div>
+          <h2>Information Technology Department</h2>
+          <p>Explore academic programs focused on software development, networking, databases, cybersecurity, information systems, and digital innovation.</p>
+          <div class="cc-event-footer">
+            <span>EXPLORE</span>
+            <a href="#department-modal" class="cc-department-view" data-department-view>View department&nbsp; →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cc-event-card">
+        <div class="cc-event-image">
+          <img src="/sites/default/files/campusconnect-library/departments/departments-02-file-digital-computer-laboratory-jpg.jpg" alt="Business Administration Department">
+          <span class="cc-date">03</span>
+        </div>
+        <div class="cc-event-body">
+          <div class="cc-meta">
+            <span>ACADEMIC DEPARTMENT</span>
+            <span>CampusConnect</span>
+          </div>
+          <h2>Business Administration Department</h2>
+          <p>Explore business education, leadership, entrepreneurship, management, and professional development opportunities.</p>
+          <div class="cc-event-footer">
+            <span>EXPLORE</span>
+            <a href="#department-modal" class="cc-department-view" data-department-view>View department&nbsp; →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cc-event-card">
+        <div class="cc-event-image">
+          <img src="/sites/default/files/campusconnect-library/departments/departments-04-file-barbara-mcclintock-1902-1992-shown-in-her-laborato.jpg" alt="Education Department">
+          <span class="cc-date">04</span>
+        </div>
+        <div class="cc-event-body">
+          <div class="cc-meta">
+            <span>ACADEMIC DEPARTMENT</span>
+            <span>CampusConnect</span>
+          </div>
+          <h2>Education Department</h2>
+          <p>Explore teaching, learning, educational practice, and programs preparing students to support the next generation.</p>
+          <div class="cc-event-footer">
+            <span>EXPLORE</span>
+            <a href="#department-modal" class="cc-department-view" data-department-view>View department&nbsp; →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+</section>
+
+</main>
+
+
+<h2 id="cc-event-modal-title"></h2>
+
+        <p class="cc-event-modal-intro"></p>
+
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+</div>
+
+
+<div id="department-modal" class="cc-department-modal" aria-hidden="true">
+  <div class="cc-department-modal-backdrop" data-department-close></div>
+
+  <div class="cc-department-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cc-department-modal-title">
+    <button class="cc-department-modal-close" type="button" data-department-close aria-label="Close department details">×</button>
+
+    <div class="cc-department-modal-image">
+      <img id="cc-department-modal-image" src="" alt="">
+      <span class="cc-department-modal-badge">CAMPUSCONNECT</span>
+    </div>
+
+    <div class="cc-department-modal-content">
+      <div class="cc-department-modal-kicker">ACADEMIC DEPARTMENT</div>
+      <h2 id="cc-department-modal-title"></h2>
+      <p id="cc-department-modal-description"></p>
+
+      <div class="cc-department-highlights">
+        <div class="cc-department-highlight">
+          <strong>FOCUS</strong>
+          <span id="cc-department-focus"></span>
+        </div>
+        <div class="cc-department-highlight">
+          <strong>EXPLORE</strong>
+          <span id="cc-department-explore"></span>
+        </div>
+        <div class="cc-department-highlight">
+          <strong>COMMUNITY</strong>
+          <span>Students, faculty &amp; campus opportunities</span>
+        </div>
+      </div>
+
+      <div class="cc-department-modal-footer">
+        <span>ON CAMPUS</span>
+        <button type="button" data-department-close>Close details ×</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.cc-department-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.cc-department-modal.is-open {
+  display: flex;
+}
+.cc-department-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 31, 61, .58);
+  backdrop-filter: blur(7px);
+}
+.cc-department-modal-dialog {
+  position: relative;
+  z-index: 2;
+  width: min(920px, 94vw);
+  max-height: 88vh;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #d5e5f3;
+  border-radius: 28px;
+  box-shadow: 0 30px 90px rgba(0, 35, 75, .28);
+  animation: ccDepartmentModalIn .24s ease-out;
+}
+.cc-department-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #07549a;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,.14);
+}
+.cc-department-modal-image {
+  position: relative;
+  height: 285px;
+  overflow: hidden;
+  background: #eaf4fb;
+}
+.cc-department-modal-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.cc-department-modal-badge {
+  position: absolute;
+  left: 26px;
+  bottom: 22px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #087ee5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.cc-department-modal-content {
+  padding: 30px 34px 28px;
+}
+.cc-department-modal-kicker {
+  color: #087ee5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  margin-bottom: 9px;
+}
+.cc-department-modal-content h2 {
+  margin: 0 0 12px;
+  color: #063f76;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.08;
+}
+.cc-department-modal-content > p {
+  max-width: 760px;
+  margin: 0;
+  color: #5c84a8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.cc-department-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 25px;
+}
+.cc-department-highlight {
+  padding: 18px;
+  border: 1px solid #d8e8f5;
+  border-radius: 17px;
+  background: #f5faff;
+}
+.cc-department-highlight strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #087ee5;
+  font-size: 10px;
+  letter-spacing: .13em;
+}
+.cc-department-highlight span {
+  display: block;
+  color: #185886;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.cc-department-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #dceaf5;
+}
+.cc-department-modal-footer > span {
+  color: #087ee5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.cc-department-modal-footer button {
+  border: 0;
+  background: transparent;
+  color: #064b88;
+  font-weight: 700;
+  cursor: pointer;
+}
+@keyframes ccDepartmentModalIn {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+body.cc-department-modal-open {
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  .cc-department-modal {
+    padding: 14px;
+  }
+  .cc-department-modal-dialog {
+    width: 96vw;
+    border-radius: 22px;
+  }
+  .cc-department-modal-image {
+    height: 210px;
+  }
+  .cc-department-modal-content {
+    padding: 24px 20px;
+  }
+  .cc-department-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+  .cc-department-modal-article {
+    margin-top: 18px;
+    color: #315f87;
+    line-height: 1.7;
+  }
+  .cc-department-modal-article h3 {
+    margin: 20px 0 7px;
+    color: #003f7f;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .cc-department-modal-article p {
+    margin: 0 0 12px;
+  }
+  .cc-department-modal-article ul {
+    margin: 8px 0 16px 20px;
+    padding: 0;
+  }
+  .cc-department-modal-article li {
+    margin: 5px 0;
+  }
+  .cc-department-modal-article .cc-modal-section {
+    padding-top: 4px;
+  }
+
+</style>
+
+<script>
+(function () {
+  const modal = document.getElementById('department-modal');
+  if (!modal) return;
+
+  const image = document.getElementById('cc-department-modal-image');
+  const title = document.getElementById('cc-department-modal-title');
+  const description = document.getElementById('cc-department-modal-description');
+  const focus = document.getElementById('cc-department-focus');
+  const explore = document.getElementById('cc-department-explore');
+
+  const details = {
+    'Agricultural Department': {
+      focus: 'Agriculture, food systems & sustainable development',
+      explore: 'Practical learning, agricultural education & community impact',
+      overview: 'The Agricultural Department supports students in understanding agriculture as a foundation for food security, sustainable development and community wellbeing.',
+      study: 'Students can explore agricultural education, food systems, sustainable practices, crop and livestock production, and the relationship between agriculture and the wider community.',
+      experience: 'Learning can connect classroom knowledge with practical activities, field-based experiences, problem solving and projects that develop useful skills for real agricultural settings.',
+      careers: 'The knowledge and skills developed can support future pathways in agriculture, food systems, agribusiness, community development, environmental work and related professional fields.',
+      areas: [
+        'Agricultural education and practical learning',
+        'Food systems and sustainable development',
+        'Community and environmental impact'
+      ]
+    },
+    'Information Technology Department': {
+      focus: 'Software, networking, cybersecurity & digital innovation',
+      explore: 'Technology programs, systems, databases & digital skills',
+      overview: 'The Information Technology Department prepares students to understand, build and support the digital systems used by modern organizations and communities.',
+      study: 'Students can develop knowledge across software development, databases, networking, information systems, cybersecurity and other areas of digital technology.',
+      experience: 'Practical learning can involve problem solving, digital projects, system design, technical exercises and the application of technology to real-world challenges.',
+      careers: 'These skills can support pathways in software development, IT support, networking, cybersecurity, database administration, systems analysis and other technology-focused roles.',
+      areas: [
+        'Software and application development',
+        'Networking, systems and databases',
+        'Cybersecurity and digital innovation'
+      ]
+    },
+    'Business Administration Department': {
+      focus: 'Business, leadership, entrepreneurship & management',
+      explore: 'Professional development, enterprise & leadership opportunities',
+      overview: 'The Business Administration Department develops knowledge and skills for students interested in organizations, management, enterprise and professional leadership.',
+      study: 'Students can explore business principles, management, entrepreneurship, leadership, organizational decision-making and the practical challenges faced by modern enterprises.',
+      experience: 'Learning can emphasize communication, teamwork, planning, presentations, problem solving and practical business activities that build confidence for professional environments.',
+      careers: 'The department can support future pathways in business management, administration, entrepreneurship, marketing, leadership, operations and other professional settings.',
+      areas: [
+        'Business management and administration',
+        'Entrepreneurship and enterprise',
+        'Leadership and professional development'
+      ]
+    },
+    'Education Department': {
+      focus: 'Teaching, learning & educational practice',
+      explore: 'Education programs, teaching skills & future-focused learning',
+      overview: 'The Education Department focuses on the knowledge, skills and practices needed to support effective teaching, learning and educational development.',
+      study: 'Students can explore teaching approaches, learning processes, educational practice, communication and the principles that support learners at different stages.',
+      experience: 'Practical learning can include lesson planning, communication activities, collaborative work, observation and other experiences that connect educational theory with practice.',
+      careers: 'The skills developed can support pathways in teaching, education support, training, learning development, community education and related professional areas.',
+      areas: [
+        'Teaching and learning practice',
+        'Educational communication and development',
+        'Preparation for education-focused careers'
+      ]
+    }
+  };
+
+  function openModal(card) {
+    const cardTitle = card.querySelector('h2');
+    const cardDescription = card.querySelector('.cc-event-body > p');
+    const cardImage = card.querySelector('.cc-event-image img');
+
+    const name = cardTitle ? cardTitle.textContent.trim() : 'Department';
+    const info = details[name] || {
+      focus: 'Academic learning & professional development',
+      explore: 'Programs, people & campus opportunities'
+    };
+
+    title.textContent = name;
+    description.innerHTML = `
+      <div class="cc-department-modal-article">
+        <div class="cc-modal-section">
+          <h3>Department overview</h3>
+          <p>${info.overview}</p>
+        </div>
+        <div class="cc-modal-section">
+          <h3>What students can explore</h3>
+          <p>${info.study}</p>
+        </div>
+        <div class="cc-modal-section">
+          <h3>Learning & practical experience</h3>
+          <p>${info.experience}</p>
+        </div>
+        <div class="cc-modal-section">
+          <h3>Key areas</h3>
+          <ul>${info.areas.map(function (item) {
+            return '<li>' + item + '</li>';
+          }).join('')}</ul>
+        </div>
+        <div class="cc-modal-section">
+          <h3>Future pathways</h3>
+          <p>${info.careers}</p>
+        </div>
+      </div>`;
+    focus.textContent = info.focus;
+    explore.textContent = info.explore;
+
+    if (cardImage) {
+      image.src = cardImage.src;
+      image.alt = name;
+    }
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('cc-department-modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('cc-department-modal-open');
+  }
+
+  document.querySelectorAll('[data-department-view]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const card = link.closest('.cc-event-card');
+      if (card) openModal(card);
+    });
+  });
+
+  modal.querySelectorAll('[data-department-close]').forEach(function (button) {
+    button.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+})();
+</script>
+
+<footer class="cc-footer">
+  <div class="cc-footer-inner">
+
+    <div class="cc-footer-brand">
+      <span class="cc-logo">C</span>
+      <div>
+        <strong>CampusConnect</strong>
+        <small>Higher education, connected.</small>
+      </div>
+    </div>
+
+    <nav class="cc-footer-nav" aria-label="Footer navigation">
+      <a href="{{ path('<front>') }}">Home</a>
+      <a href="/announcements">Announcements</a>
+      <a href="/campus-news">News</a>
+      <a href="/events">Events</a>
+      <a href="/departments">Departments</a>
+      <a href="/faculty-staff">People</a>
+    </nav>
+
+    <div class="cc-footer-platform">
+
+      <div class="cc-drupal-brand">
+        <img src="/core/misc/logo/drupal-logo.svg" alt="Drupal">
+        <strong>Drupal</strong>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">▣</span>
+        <span>Drupal-powered</span>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">♿</span>
+        <span>Accessible by design</span>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">▯</span>
+        <span>Mobile ready</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+

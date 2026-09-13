@@ -1,0 +1,632 @@
+/* ============================================================
+   CAMPUSCONNECT — DEPARTMENTS
+   Clean consolidated layout
+   Matches Events / News visual language
+   ============================================================ */
+
+body.path-departments {
+  margin: 0;
+  background: #fff;
+  color: #0b3f78;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+body.path-departments .cc-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #dce8f5;
+  position: relative;
+  z-index: 20;
+}
+
+body.path-departments .cc-header-inner {
+  width: min(1320px, calc(100% - 64px));
+  min-height: 94px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+body.path-departments .cc-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+body.path-departments .cc-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #1687ee;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(22,135,238,.18);
+}
+
+body.path-departments .cc-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+body.path-departments .cc-brand-text strong {
+  color: #073d79;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+body.path-departments .cc-brand-text small {
+  margin-top: 7px;
+  color: #4281c8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+/* Navigation */
+
+body.path-departments .cc-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+body.path-departments .cc-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 15px;
+  border-radius: 26px;
+  color: #073d79;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+body.path-departments .cc-nav a:hover {
+  background: #edf6ff;
+}
+
+body.path-departments .cc-nav a.active,
+body.path-departments .cc-nav a.is-active {
+  background: #1687ee;
+  color: #fff;
+  box-shadow: 0 7px 18px rgba(22,135,238,.20);
+}
+
+/* Search */
+
+body.path-departments .cc-search {
+  flex: 0 0 208px;
+  height: 46px;
+  border: 1px solid #cfe1f4;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  color: #75a0c9;
+  background: #f9fcff;
+}
+
+/* ============================================================
+   PAGE CONTENT
+   ============================================================ */
+
+body.path-departments main {
+  width: 100%;
+}
+
+body.path-departments .cc-departments-page {
+  min-height: 100vh;
+}
+
+/* Main content wrapper — supports common class names */
+
+body.path-departments .cc-departments,
+body.path-departments .cc-departments-main,
+body.path-departments .cc-page-content {
+  width: min(1240px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+body.path-departments .cc-hero {
+  width: 100%;
+  min-height: 385px;
+  margin: 74px auto 30px;
+  padding: 58px 54px 52px;
+  box-sizing: border-box;
+  border: 1px solid #cfe3f8;
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 10% 80%, rgba(126,201,255,.18), transparent 35%),
+    linear-gradient(115deg, #edf8ff 0%, #f8fbff 52%, #fff 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+body.path-departments .cc-hero::before {
+  content: "ACADEMICS";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(44,139,228,.065);
+  font-size: clamp(90px, 11vw, 150px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+body.path-departments .cc-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body.path-departments .cc-eyebrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #0781ed;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .18em;
+}
+
+body.path-departments .cc-eyebrow span {
+  width: 29px;
+  height: 2px;
+  background: #86c4fb;
+}
+
+body.path-departments .cc-hero h1 {
+  margin: 22px 0 18px;
+  color: #073f7d;
+  font-size: clamp(54px, 6vw, 72px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  font-weight: 850;
+}
+
+body.path-departments .cc-hero p {
+  max-width: 790px;
+  margin: 0 auto;
+  color: #4f82ba;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+body.path-departments .cc-pills {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+body.path-departments .cc-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid #c9e2fb;
+  border-radius: 22px;
+  background: rgba(255,255,255,.78);
+  color: #1768b7;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* ============================================================
+   DEPARTMENT GRID
+   ============================================================ */
+
+body.path-departments .cc-department-grid,
+body.path-departments .cc-departments-grid,
+body.path-departments .cc-card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 auto;
+  padding-bottom: 74px;
+}
+
+/* Common card names */
+
+body.path-departments .cc-department-card,
+body.path-departments .cc-department,
+body.path-departments .cc-card {
+  min-width: 0;
+  min-height: 570px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d3e2f1;
+  border-top: 3px solid #245bb3;
+  border-radius: 17px;
+  box-shadow: 0 13px 34px rgba(28,73,119,.075);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+body.path-departments .cc-department-card:hover,
+body.path-departments .cc-department:hover,
+body.path-departments .cc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(28,73,119,.13);
+}
+
+/* Images */
+
+body.path-departments .cc-department-card img,
+body.path-departments .cc-department img,
+body.path-departments .cc-card img {
+  width: 100%;
+  height: 245px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: #edf6fd;
+}
+
+body.path-departments .cc-department-image {
+  position: relative;
+  height: 245px;
+  overflow: hidden;
+  background: #edf6fd;
+}
+
+body.path-departments .cc-department-image img {
+  height: 100%;
+}
+
+body.path-departments .cc-department-content,
+body.path-departments .cc-card-content {
+  flex: 1;
+  padding: 25px 22px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Explore label */
+
+body.path-departments .cc-explore,
+body.path-departments .cc-department-card .cc-label {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 31px;
+  padding: 0 12px;
+  border: 1px solid #b9dcfb;
+  border-radius: 18px;
+  color: #0783ed;
+  background: #f8fcff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+
+/* Number */
+
+body.path-departments .cc-number {
+  margin-left: auto;
+  color: #e3f0fd;
+  font-size: 29px;
+  font-weight: 850;
+}
+
+/* Card title */
+
+body.path-departments .cc-department-card h2,
+body.path-departments .cc-department h2,
+body.path-departments .cc-card h2 {
+  margin: 14px 0 9px;
+  color: #083e79;
+  font-size: 22px;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+body.path-departments .cc-department-card p,
+body.path-departments .cc-department p,
+body.path-departments .cc-card p {
+  margin: 0;
+  color: #527eaf;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Bottom links */
+
+body.path-departments .cc-story-link,
+body.path-departments .cc-department-card a[href*="department"],
+body.path-departments .cc-card a[href*="department"] {
+  margin-top: auto;
+  padding-top: 25px;
+  color: #073f7d;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.path-departments .cc-story-link:hover,
+body.path-departments .cc-department-card a:hover,
+body.path-departments .cc-card a:hover {
+  color: #0783ed;
+}
+
+body.path-departments .cc-category {
+  margin-top: 27px;
+  color: #87a7c8;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .19em;
+}
+
+/* ============================================================
+   FOURTH CARD
+   Center it instead of leaving an awkward empty left column.
+   ============================================================ */
+
+body.path-departments .cc-department-grid > :nth-child(4),
+body.path-departments .cc-departments-grid > :nth-child(4),
+body.path-departments .cc-card-grid > :nth-child(4) {
+  grid-column: 2;
+}
+
+/* ============================================================
+   FOOTER — MATCH EVENTS / NEWS
+   ============================================================ */
+
+body.path-departments .cc-footer {
+  width: 100%;
+  margin-top: 0;
+  background: #0b467d;
+  color: #fff;
+  overflow: hidden;
+}
+
+body.path-departments .cc-footer-inner {
+  width: min(1320px, calc(100% - 64px));
+  min-height: 142px;
+  margin: 0 auto;
+  padding: 27px 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto 1.15fr;
+  align-items: center;
+  gap: 38px;
+}
+
+body.path-departments .cc-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+body.path-departments .cc-footer-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #1687ee;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+body.path-departments .cc-footer-brand strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+body.path-departments .cc-footer-brand small {
+  display: block;
+  margin-top: 7px;
+  color: #b8d5ee;
+  font-size: 11px;
+}
+
+body.path-departments .cc-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+body.path-departments .cc-footer-links a {
+  color: #c4dcf0;
+  text-decoration: none;
+  font-size: 11px;
+  transition: color .2s ease;
+}
+
+body.path-departments .cc-footer-links a:hover,
+body.path-departments .cc-footer-links a.is-active {
+  color: #fff;
+}
+
+body.path-departments .cc-footer-platform {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  color: #a9c8e4;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+body.path-departments .cc-drupal-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-right: 18px;
+  border-right: 1px solid rgba(255,255,255,.22);
+}
+
+body.path-departments .cc-drupal-brand img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+body.path-departments .cc-drupal-brand strong {
+  color: #fff;
+  font-size: 19px;
+}
+
+body.path-departments .cc-copy {
+  color: #a9c8e4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  body.path-departments .cc-header-inner {
+    width: min(100% - 36px, 1000px);
+    gap: 14px;
+  }
+
+  body.path-departments .cc-nav a {
+    padding: 0 10px;
+  }
+
+  body.path-departments .cc-search {
+    flex-basis: 160px;
+  }
+
+  body.path-departments .cc-footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  body.path-departments .cc-footer-platform {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 820px) {
+  body.path-departments .cc-header-inner {
+    flex-wrap: wrap;
+    padding: 17px 0;
+  }
+
+  body.path-departments .cc-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto;
+  }
+
+  body.path-departments .cc-search {
+    margin-left: auto;
+  }
+
+  body.path-departments .cc-hero {
+    margin-top: 40px;
+    padding: 48px 25px;
+  }
+
+  body.path-departments .cc-department-grid,
+  body.path-departments .cc-departments-grid,
+  body.path-departments .cc-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.path-departments .cc-department-grid > :nth-child(4),
+  body.path-departments .cc-departments-grid > :nth-child(4),
+  body.path-departments .cc-card-grid > :nth-child(4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body.path-departments .cc-header-inner,
+  body.path-departments .cc-departments,
+  body.path-departments .cc-departments-main,
+  body.path-departments .cc-page-content {
+    width: calc(100% - 28px);
+  }
+
+  body.path-departments .cc-brand-text strong {
+    font-size: 20px;
+  }
+
+  body.path-departments .cc-search {
+    display: none;
+  }
+
+  body.path-departments .cc-hero {
+    margin-top: 28px;
+    min-height: 0;
+    border-radius: 20px;
+    padding: 43px 20px;
+  }
+
+  body.path-departments .cc-hero h1 {
+    font-size: 46px;
+  }
+
+  body.path-departments .cc-department-grid,
+  body.path-departments .cc-departments-grid,
+  body.path-departments .cc-card-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 45px;
+  }
+
+  body.path-departments .cc-department-grid > :nth-child(4),
+  body.path-departments .cc-departments-grid > :nth-child(4),
+  body.path-departments .cc-card-grid > :nth-child(4) {
+    grid-column: auto;
+  }
+
+  body.path-departments .cc-department-card,
+  body.path-departments .cc-department,
+  body.path-departments .cc-card {
+    min-height: 0;
+  }
+
+  body.path-departments .cc-footer-links {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  body.path-departments .cc-footer-platform {
+    flex-wrap: wrap;
+    white-space: normal;
+    text-align: center;
+  }
+}

@@ -1,0 +1,256 @@
+<article class="cc-announcement-detail">
+
+  <div class="cc-announcement-detail-top">
+    <a href="/announcements" class="cc-back-link">
+      ← Back to announcements
+    </a>
+
+    <div class="cc-detail-label">
+      <span></span>
+      CAMPUSCONNECT / ANNOUNCEMENT
+    </div>
+  </div>
+
+  {% set announcement_title = label|render|striptags|trim %}
+  {% set title_lower = announcement_title|lower %}
+
+  <div class="cc-detail-layout">
+
+    <main class="cc-detail-main">
+
+      <div class="cc-detail-category">
+        <span class="cc-category-dot"></span>
+        CAMPUS NOTICE
+      </div>
+
+      <h1>{{ label }}</h1>
+
+      <div class="cc-detail-date">
+        {{ node.getCreatedTime()|date('D, d M Y · H:i') }}
+      </div>
+
+      {# =====================================================
+         ENROLLMENT
+         ===================================================== #}
+      {% if 'enrollment' in title_lower or 'academic year' in title_lower %}
+
+        <section class="cc-info-highlight cc-info-enrollment">
+          <div class="cc-info-icon">🎓</div>
+          <div>
+            <span class="cc-info-kicker">ENROLLMENT UPDATE</span>
+            <h2>Academic Year 2026–2027</h2>
+            <p>
+              Enrollment is now open. Students are encouraged to complete
+              their enrollment requirements as early as possible.
+            </p>
+          </div>
+        </section>
+
+        <div class="cc-detail-info-grid">
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">01</span>
+            <strong>Who should act?</strong>
+            <p>New and returning students preparing for the upcoming academic year.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">02</span>
+            <strong>What to prepare</strong>
+            <p>Review your enrollment requirements and make sure your documents are ready.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">03</span>
+            <strong>Recommended action</strong>
+            <p>Complete your enrollment process before the applicable deadline.</p>
+          </div>
+        </div>
+
+      {# =====================================================
+         PAGE WORKING
+         ===================================================== #}
+      {% elseif 'working' in title_lower or 'page' in title_lower %}
+
+        <section class="cc-info-highlight cc-info-success">
+          <div class="cc-info-icon">✓</div>
+          <div>
+            <span class="cc-info-kicker">SERVICE STATUS</span>
+            <h2>CampusConnect is back online</h2>
+            <p>
+              The affected page or service is now working normally.
+              Thank you for your patience while the issue was being resolved.
+            </p>
+          </div>
+        </section>
+
+        <div class="cc-detail-info-grid">
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">01</span>
+            <strong>Status</strong>
+            <p>Operational and available for campus users.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">02</span>
+            <strong>What changed?</strong>
+            <p>The previously unavailable page has been restored.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">03</span>
+            <strong>Next step</strong>
+            <p>Refresh the page and continue using CampusConnect normally.</p>
+          </div>
+        </div>
+
+      {# =====================================================
+         CAPSTONE
+         ===================================================== #}
+      {% elseif 'capstone' in title_lower or 'orientation' in title_lower %}
+
+        <section class="cc-info-highlight cc-info-academic">
+          <div class="cc-info-icon">💻</div>
+          <div>
+            <span class="cc-info-kicker">ACADEMIC NOTICE</span>
+            <h2>BSIT Capstone Project Orientation</h2>
+            <p>
+              An important orientation for BSIT students covering project
+              expectations, guidelines, schedules, and submission requirements.
+            </p>
+          </div>
+        </section>
+
+        <div class="cc-detail-info-grid">
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">01</span>
+            <strong>Who should attend?</strong>
+            <p>BSIT students involved in the Capstone Project.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">02</span>
+            <strong>Topics covered</strong>
+            <p>Project guidelines, requirements, schedules, and important milestones.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">03</span>
+            <strong>Be prepared</strong>
+            <p>Review your project plans and bring questions for your instructors or advisers.</p>
+          </div>
+        </div>
+
+      {# =====================================================
+         INTERNET / NETWORK
+         ===================================================== #}
+      {% elseif 'internet' in title_lower or 'network' in title_lower or 'wifi' in title_lower or 'maintenance' in title_lower %}
+
+        <section class="cc-info-highlight cc-info-network">
+          <div class="cc-info-icon">🌐</div>
+          <div>
+            <span class="cc-info-kicker">CAMPUS TECHNOLOGY</span>
+            <h2>Internet maintenance notice</h2>
+            <p>
+              Campus network services may experience temporary interruptions
+              while maintenance and improvements are being performed.
+            </p>
+          </div>
+        </section>
+
+        <div class="cc-detail-info-grid">
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">01</span>
+            <strong>What may be affected?</strong>
+            <p>Campus internet, Wi-Fi, and services that depend on the network connection.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">02</span>
+            <strong>During maintenance</strong>
+            <p>Connection speeds or availability may temporarily change.</p>
+          </div>
+
+          <div class="cc-detail-info-card">
+            <span class="cc-info-number">03</span>
+            <strong>What should you do?</strong>
+            <p>Save important work and try reconnecting once maintenance is complete.</p>
+          </div>
+        </div>
+
+      {# =====================================================
+         DEFAULT ANNOUNCEMENT
+         ===================================================== #}
+      {% else %}
+
+        <section class="cc-info-highlight cc-info-default">
+          <div class="cc-info-icon">!</div>
+          <div>
+            <span class="cc-info-kicker">CAMPUS UPDATE</span>
+            <h2>Important information for our campus community</h2>
+            <p>
+              Please review this announcement carefully and follow any
+              instructions that may apply to you.
+            </p>
+          </div>
+        </section>
+
+      {% endif %}
+
+      {# Real Drupal body content, if supplied #}
+      {% if content.body %}
+        <section class="cc-detail-body">
+          <div class="cc-detail-body-label">OFFICIAL DETAILS</div>
+          {{ content.body }}
+        </section>
+      {% endif %}
+
+      <div class="cc-detail-bottom">
+        <a href="/announcements" class="cc-detail-primary">
+          ← View all announcements
+        </a>
+
+        <span class="cc-detail-trust">
+          ✓ Official CampusConnect information
+        </span>
+      </div>
+
+    </main>
+
+    <aside class="cc-detail-sidebar">
+
+      <div class="cc-sidebar-status">
+        <span class="cc-status-pulse"></span>
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Official announcement</small>
+        </div>
+      </div>
+
+      <div class="cc-sidebar-card">
+        <span class="cc-sidebar-icon">✓</span>
+        <strong>Stay informed</strong>
+        <p>
+          Check CampusConnect regularly for academic,
+          technology, and campus updates.
+        </p>
+      </div>
+
+      <div class="cc-sidebar-card">
+        <span class="cc-sidebar-icon">◆</span>
+        <strong>One campus. Connected.</strong>
+        <p>
+          Important information, organized in one place
+          for the university community.
+        </p>
+      </div>
+
+      <a href="/announcements" class="cc-sidebar-link">
+        View announcements
+        <span>→</span>
+      </a>
+
+    </aside>
+
+  </div>
+
+</article>

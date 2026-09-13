@@ -1,0 +1,87 @@
+
+/* CampusConnect server control */
+
+.cc-server-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid #e1e3e9;
+  background: #fff;
+}
+
+.cc-server-status-dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+  background: #8a8d98;
+}
+
+.cc-server-status.is-online .cc-server-status-dot {
+  background: #218739;
+}
+
+.cc-server-status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cc-server-status-text strong {
+  color: #11152b;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.cc-server-status-text span {
+  color: #6b6f7c;
+  font-size: 14px;
+}
+
+.cc-server-actions {
+  margin-top: 18px;
+}
+
+.cc-server-button {
+  min-height: 46px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.cc-server-button-on {
+  background: #11152b;
+  color: #fff;
+}
+
+.cc-server-button-off {
+  background: #e9eaf0;
+  color: #11152b;
+}
+
+.cc-server-address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  color: #737785;
+  font-size: 13px;
+}
+
+.cc-server-address code {
+  color: #11152b;
+}
+
+@media (max-width: 600px) {
+  .cc-server-status {
+    padding: 20px;
+  }
+
+  .cc-server-address {
+    flex-direction: column;
+  }
+}
+

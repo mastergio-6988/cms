@@ -1,0 +1,863 @@
+{% do attach_library('campusconnect/departments-rebuild') %}
+
+<div class="cc-site cc-departments-page">
+
+  <header class="cc-header">
+    <div class="cc-header-inner">
+
+      <a class="cc-brand" href="{{ path('<front>') }}">
+        <span class="cc-logo">C</span>
+        <span class="cc-brand-text">
+          <strong>CampusConnect</strong>
+          <small>HIGHER EDUCATION</small>
+        </span>
+      </a>
+
+      <nav class="cc-nav" aria-label="Main navigation">
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a class="active" href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <a class="cc-search" href="/search/node">
+        <span class="cc-search-icon"></span>
+        <span>Search...</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="cc-dept-hero">
+
+      <div class="cc-dept-hero-watermark">ACADEMICS</div>
+
+      <div class="cc-dept-hero-content">
+
+        <div class="cc-dept-eyebrow">
+          <span></span>
+          CAMPUSCONNECT / EXPLORE
+          <span></span>
+        </div>
+
+        <h1>Departments</h1>
+
+        <p>
+          Explore academic departments, offices, services, programs,
+          contact points, and the people who support the university community.
+        </p>
+
+        <div class="cc-dept-pills">
+          <span>▣ &nbsp; Easy to explore</span>
+          <span>♧ &nbsp; University community</span>
+          <span>◆ &nbsp; CampusConnect</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cc-dept-section">
+
+      <div class="cc-dept-grid">
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-01-file-computer-centre-laboratory-back-view-at-obafemi-aw.jpg"
+              alt="Agricultural Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">01</span>
+            </div>
+
+            <h2>Agricultural Department</h2>
+
+            <p>
+              Explore agricultural education, practical learning,
+              sustainable development, food systems, and opportunities
+              supporting the university and surrounding community.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="agricultural">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-02-file-digital-computer-laboratory-jpg.jpg"
+              alt="Information Technology Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">02</span>
+            </div>
+
+            <h2>Information Technology Department</h2>
+
+            <p>
+              The Information Technology Department provides academic
+              programs focused on software development, networking,
+              databases, cybersecurity, information systems, and digital innovation.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="technology">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-03-file-former-computer-laboratory-tower-geograph-org-uk-1.jpg"
+              alt="Business Administration Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">03</span>
+            </div>
+
+            <h2>Business Administration Department</h2>
+
+            <p>
+              The Business Administration Department develops students'
+              knowledge and skills in management, entrepreneurship,
+              marketing, leadership, and business operations.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="business">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-04-file-barbara-mcclintock-1902-1992-shown-in-her-laborato.jpg"
+              alt="Education Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">04</span>
+            </div>
+
+            <h2>Education Department</h2>
+
+            <p>
+              The Education Department prepares students for careers
+              in teaching, educational leadership, curriculum,
+              learning development, and community service.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="education">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="department-story"
+       class="cc-dept-modal"
+       aria-hidden="true">
+
+    <div class="cc-dept-modal-backdrop" data-department-close></div>
+
+    <div class="cc-dept-modal-dialog"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="cc-dept-modal-title">
+
+      <button class="cc-dept-modal-close"
+              type="button"
+              data-department-close
+              aria-label="Close department story">
+        ×
+      </button>
+
+      <div class="cc-dept-modal-kicker">
+        CAMPUSCONNECT / ACADEMIC DIRECTORY
+      </div>
+
+      <div class="cc-dept-modal-layout">
+
+        <div class="cc-dept-modal-copy">
+
+          <span class="cc-dept-modal-label">EXPLORE THE DEPARTMENT</span>
+
+          <h2 id="cc-dept-modal-title"></h2>
+
+          <p class="cc-dept-modal-intro"></p>
+
+          <div class="cc-dept-modal-body"></div>
+
+          <div class="cc-dept-modal-highlights"></div>
+
+        </div>
+
+        <div class="cc-dept-modal-image-wrap">
+          <img class="cc-dept-modal-image" src="" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="cc-footer">
+    <div class="cc-footer-inner">
+
+      <div class="cc-footer-brand">
+        <span class="cc-footer-logo">C</span>
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <div class="cc-footer-platform">
+        <div class="cc-drupal-brand">
+          <img src="/core/misc/logo/drupal-logo.svg" alt="Drupal">
+          <strong>Drupal</strong>
+        </div>
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+
+
+
+<style id="cc-departments-events-style-final">
+/* ============================================================
+   CAMPUSCONNECT DEPARTMENTS
+   FINAL EVENTS-STYLE ENHANCEMENT
+   Scoped ONLY to .cc-departments-page
+   ============================================================ */
+
+.cc-departments-page {
+  --cc-blue:#0b4f91;
+  --cc-blue-dark:#083f73;
+  --cc-bright:#1687ee;
+  --cc-line:#d9e7f5;
+  --cc-soft:#eef7ff;
+  --cc-text:#123f70;
+  --cc-muted:#4f79a6;
+  width:100%;
+  min-height:100vh;
+  background:#fff;
+  color:var(--cc-text);
+  overflow:hidden;
+}
+
+/* ---------- HEADER ---------- */
+
+.cc-departments-page .cc-header {
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid var(--cc-line);
+  position:relative;
+  z-index:20;
+}
+
+.cc-departments-page .cc-header-inner {
+  width:min(1320px,calc(100% - 72px));
+  min-height:92px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.cc-departments-page .cc-brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex:0 0 auto;
+  text-decoration:none;
+}
+
+.cc-departments-page .cc-logo {
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:#1687ee;
+  color:#fff;
+  font-size:27px;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(22,135,238,.20);
+}
+
+.cc-departments-page .cc-brand-text {
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+}
+
+.cc-departments-page .cc-brand-text strong {
+  color:#073f78;
+  font-size:21px;
+  font-weight:800;
+}
+
+.cc-departments-page .cc-brand-text small {
+  margin-top:6px;
+  color:#1687ee;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+
+.cc-departments-page .cc-nav {
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:3px;
+}
+
+.cc-departments-page .cc-nav a {
+  color:#073f78;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  padding:12px 13px;
+  border-radius:25px;
+  white-space:nowrap;
+  transition:.2s ease;
+}
+
+.cc-departments-page .cc-nav a:hover {
+  background:#eef7ff;
+  color:#1687ee;
+}
+
+.cc-departments-page .cc-nav a.active,
+.cc-departments-page .cc-nav a.is-active {
+  background:#1687ee;
+  color:#fff;
+  box-shadow:0 8px 18px rgba(22,135,238,.20);
+}
+
+.cc-departments-page .cc-search {
+  flex:0 0 208px;
+  height:44px;
+  margin-left:10px;
+  border:1px solid #cfe1f3;
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  box-sizing:border-box;
+  color:#79a1c8;
+  text-decoration:none;
+  background:#fafdff;
+}
+
+/* ---------- MAIN ---------- */
+
+.cc-departments-page main {
+  width:100%;
+  padding:0 0 76px;
+}
+
+/* ---------- HERO ---------- */
+
+.cc-departments-page .cc-hero {
+  width:min(1240px,calc(100% - 72px));
+  min-height:384px;
+  margin:72px auto 42px;
+  border:1px solid #cfe3f7;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 15% 85%,rgba(107,190,255,.20),transparent 38%),
+    linear-gradient(135deg,#e9f6ff 0%,#f7fbff 56%,#fff 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-sizing:border-box;
+}
+
+.cc-departments-page .cc-hero::before {
+  content:"ACADEMICS";
+  position:absolute;
+  top:-30px;
+  left:50%;
+  transform:translateX(-50%);
+  color:rgba(22,135,238,.055);
+  font-size:100px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.02em;
+  pointer-events:none;
+}
+
+.cc-departments-page .cc-hero-content {
+  width:min(900px,90%);
+  position:relative;
+  z-index:2;
+  padding:58px 20px;
+}
+
+.cc-departments-page .cc-eyebrow {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#1687ee;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.cc-departments-page .cc-eyebrow span {
+  width:30px;
+  height:2px;
+  background:#7bbcff;
+  display:block;
+}
+
+.cc-departments-page .cc-hero h1 {
+  margin:22px 0 14px;
+  color:#073f78;
+  font-size:60px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:-.035em;
+}
+
+.cc-departments-page .cc-hero p {
+  max-width:760px;
+  margin:0 auto;
+  color:#4a7baa;
+  font-size:16px;
+  line-height:1.65;
+}
+
+.cc-departments-page .cc-pills {
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.cc-departments-page .cc-pills span {
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  padding:0 17px;
+  border:1px solid #c8e0f7;
+  border-radius:24px;
+  background:rgba(255,255,255,.80);
+  color:#0b579c;
+  font-size:12px;
+  font-weight:750;
+}
+
+/* ---------- DEPARTMENT GRID ---------- */
+
+.cc-departments-page .cc-departments-grid,
+.cc-departments-page .cc-department-grid,
+.cc-departments-page .cc-grid {
+  width:min(1240px,calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  align-items:stretch;
+}
+
+/* ---------- CARDS ---------- */
+
+.cc-departments-page .cc-department-card,
+.cc-departments-page .cc-card {
+  min-width:0;
+  min-height:500px;
+  border:1px solid #cddfed;
+  border-top:3px solid #2c68b5;
+  border-radius:18px;
+  background:#fff;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 12px 30px rgba(14,71,120,.07);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+
+.cc-departments-page .cc-department-card:hover,
+.cc-departments-page .cc-card:hover {
+  transform:translateY(-4px);
+  border-color:#9fc8ea;
+  box-shadow:0 18px 38px rgba(14,71,120,.13);
+}
+
+.cc-departments-page .cc-department-card img,
+.cc-departments-page .cc-card img {
+  width:100%;
+  height:245px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+.cc-departments-page .cc-department-card > div,
+.cc-departments-page .cc-card > div {
+  flex:1;
+}
+
+/* Common card internals */
+
+.cc-departments-page .cc-card-body,
+.cc-departments-page .cc-department-content {
+  padding:21px 22px 22px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.cc-departments-page .cc-card-label,
+.cc-departments-page .cc-department-label {
+  color:#1687ee;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+
+.cc-departments-page .cc-department-number {
+  color:#dbeafb;
+  font-size:30px;
+  font-weight:900;
+}
+
+.cc-departments-page .cc-department-card h2,
+.cc-departments-page .cc-card h2 {
+  margin:10px 0 10px;
+  color:#073f78;
+  font-size:22px;
+  line-height:1.18;
+  font-weight:800;
+}
+
+.cc-departments-page .cc-department-card p,
+.cc-departments-page .cc-card p {
+  margin:0;
+  color:#527da8;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.cc-departments-page .cc-department-card .cc-view,
+.cc-departments-page .cc-department-card a,
+.cc-departments-page .cc-card a {
+  color:#07539a;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.cc-departments-page .cc-department-card .cc-view:hover,
+.cc-departments-page .cc-department-card a:hover,
+.cc-departments-page .cc-card a:hover {
+  color:#1687ee;
+}
+
+.cc-departments-page .cc-department-footer {
+  margin-top:auto;
+  padding-top:22px;
+  border-top:1px solid #e2edf7;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cc-departments-page .cc-department-footer small {
+  color:#8aafd0;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+/* ---------- EXTRA / MODAL CONTENT ---------- */
+
+.cc-departments-page .cc-department-modal,
+.cc-departments-page .cc-modal {
+  display:none;
+}
+
+.cc-departments-page .cc-department-modal.is-open,
+.cc-departments-page .cc-modal.is-open {
+  display:flex;
+}
+
+/* ---------- FOOTER ---------- */
+
+.cc-departments-page .cc-footer {
+  width:100%;
+  min-height:126px;
+  background:#0b416f;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  margin-top:0;
+}
+
+.cc-departments-page .cc-footer::after {
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:-170px;
+  top:-260px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 65px rgba(255,255,255,.035),
+    0 0 0 130px rgba(255,255,255,.025);
+  pointer-events:none;
+}
+
+.cc-departments-page .cc-footer-inner {
+  width:min(1310px,calc(100% - 72px));
+  min-height:126px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.15fr 1.7fr 1.35fr;
+  align-items:center;
+  gap:38px;
+  position:relative;
+  z-index:2;
+}
+
+.cc-departments-page .cc-footer-brand {
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.cc-departments-page .cc-footer-brand .cc-footer-logo {
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  background:#1687ee;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:24px;
+  font-weight:800;
+}
+
+.cc-departments-page .cc-footer-brand strong {
+  display:block;
+  color:#fff;
+  font-size:15px;
+}
+
+.cc-departments-page .cc-footer-brand small {
+  display:block;
+  margin-top:7px;
+  color:#9fc4e4;
+  font-size:10px;
+}
+
+.cc-departments-page .cc-footer nav,
+.cc-departments-page .cc-footer-links {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.cc-departments-page .cc-footer nav a,
+.cc-departments-page .cc-footer-links a {
+  color:#c4dbed;
+  text-decoration:none;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+.cc-departments-page .cc-footer nav a:hover,
+.cc-departments-page .cc-footer-links a:hover {
+  color:#fff;
+}
+
+.cc-departments-page .cc-footer-platform {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:17px;
+  color:#a9c7df;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.cc-departments-page .cc-drupal-brand {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding-right:18px;
+  border-right:1px solid rgba(255,255,255,.18);
+}
+
+.cc-departments-page .cc-drupal-brand img {
+  width:28px;
+  height:28px;
+  filter:brightness(0) invert(1);
+}
+
+.cc-departments-page .cc-drupal-brand strong {
+  color:#fff;
+  font-size:17px;
+}
+
+.cc-departments-page .cc-copy {
+  display:none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:1100px) {
+  .cc-departments-page .cc-header-inner {
+    width:min(100% - 36px,100%);
+  }
+
+  .cc-departments-page .cc-search {
+    display:none;
+  }
+
+  .cc-departments-page .cc-departments-grid,
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-grid {
+    width:calc(100% - 36px);
+  }
+
+  .cc-departments-page .cc-footer-inner {
+    width:calc(100% - 36px);
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:26px 0;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    justify-content:flex-start;
+  }
+}
+
+@media (max-width:800px) {
+  .cc-departments-page .cc-header-inner {
+    min-height:auto;
+    padding:16px 0;
+    flex-wrap:wrap;
+  }
+
+  .cc-departments-page .cc-nav {
+    width:100%;
+    margin-left:0;
+    overflow-x:auto;
+    justify-content:flex-start;
+    padding-bottom:3px;
+  }
+
+  .cc-departments-page .cc-hero {
+    width:calc(100% - 28px);
+    min-height:330px;
+    margin:34px auto 28px;
+    border-radius:20px;
+  }
+
+  .cc-departments-page .cc-hero h1 {
+    font-size:44px;
+  }
+
+  .cc-departments-page .cc-departments-grid,
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-grid {
+    grid-template-columns:1fr;
+    width:calc(100% - 28px);
+  }
+
+  .cc-departments-page .cc-department-card,
+  .cc-departments-page .cc-card {
+    min-height:0;
+  }
+
+  .cc-departments-page .cc-department-card img,
+  .cc-departments-page .cc-card img {
+    height:220px;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    flex-wrap:wrap;
+    white-space:normal;
+  }
+}
+</style>

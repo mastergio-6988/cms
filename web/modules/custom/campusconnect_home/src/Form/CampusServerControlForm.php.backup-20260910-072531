@@ -1,0 +1,112 @@
+<?php
+
+namespace Drupal\campusconnect_home\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\State\StateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+/**
+ * Controls whether the public CampusConnect portal is available.
+ *
+ * Drupal maintenance mode keeps this secure control page accessible to an
+ * administrator while public visitors receive the standard 503 offline page.
+ */
+class CampusServerControlForm extends FormBase {
+
+  /**
+   * Creates the form.
+   */
+  public function __construct(
+    protected StateInterface $state,
+  ) {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container): static {
+    return new static(
+      $container->get('state'),
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId(): string {
+    return 'campusconnect_server_control_form';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state): array {
+    $offline = (bool) $this->state->get('system.maintenance_mode', FALSE);
+    $status = $offline ? $this->t('Offline') : $this->t('Online');
+    $description = $offline
+      ? $this->t('Visitors currently see the campus offline page. Administrators can still access this control panel.')
+      : $this->t('The Live Campus portal is available to students, staff, and visitors.');
+
+    $form['#attributes']['class'][] = 'cc-server-control';
+    $form['#attached']['library'][] = 'campusconnect/server-control';
+    $form['summary'] = [
+      '#markup' => '<section class="cc-server-panel cc-server-panel--' . ($offline ? 'offline' : 'online') . '">
+        <div class="cc-server-panel__signal" aria-hidden="true"><span></span></div>
+        <div class="cc-server-panel__content">
+          <span class="cc-server-panel__eyebrow">Public portal status</span>
+          <h2>' . $status . '</h2>
+          <p>' . $description . '</p>
+        </div>
+        <div class="cc-server-panel__state" aria-label="Current status: ' . strtolower((string) $status) . '">' . $status . '</div>
+      </section>',
+    ];
+    $form['guidance'] = [
+      '#markup' => '<div class="cc-server-guidance"><strong>How this works</strong><p>Turning the portal off enables Drupal maintenance mode. This keeps a secure route for an administrator to start it again; it does not terminate the web process itself.</p></div>',
+    ];
+    $form['actions'] = [
+      '#type' => 'actions',
+      '#attributes' => ['class' => ['cc-server-actions']],
+    ];
+    $form['actions']['start'] = [
+      '#type' => 'submit',
+      '#name' => 'start',
+      '#value' => $this->t('Start server'),
+      '#button_type' => 'primary',
+      '#attributes' => [
+        'class' => ['cc-server-button', 'cc-server-button--start'],
+        'disabled' => !$offline,
+      ],
+    ];
+    $form['actions']['stop'] = [
+      '#type' => 'submit',
+      '#name' => 'stop',
+      '#value' => $this->t('Turn server off'),
+      '#attributes' => [
+        'class' => ['cc-server-button', 'cc-server-button--stop'],
+        'disabled' => $offline,
+      ],
+    ];
+
+    $form['#cache']['max-age'] = 0;
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state): void {
+    $operation = $form_state->getTriggeringElement()['#name'] ?? '';
+    $offline = $operation === 'stop';
+    $this->state->set('system.maintenance_mode', $offline);
+
+    if ($offline) {
+      $this->messenger()->addWarning($this->t('Live Campus is now offline. Visitors will receive the maintenance page.'));
+    }
+    else {
+      $this->messenger()->addStatus($this->t('Live Campus is online and available to visitors.'));
+    }
+    $form_state->setRedirect('campusconnect_home.server_control');
+  }
+
+}

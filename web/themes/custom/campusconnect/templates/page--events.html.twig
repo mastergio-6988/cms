@@ -1,0 +1,423 @@
+{% do attach_library('campusconnect/events') %}
+{% do attach_library('campusconnect/events_polish') %}
+
+<header class="cc-header">
+  <div class="cc-header-inner">
+
+    <a href="/" class="cc-brand">
+      <span class="cc-logo">C</span>
+      <span class="cc-brand-text">
+        <strong>CampusConnect</strong>
+        <small>HIGHER EDUCATION</small>
+      </span>
+    </a>
+
+    <nav class="cc-nav">
+      <a href="/">Home</a>
+      <a href="/announcements">Announcements</a>
+      <a href="/campus-news">News</a>
+      <a href="/events" class="active">Events</a>
+      <a href="/departments">Departments</a>
+      <a href="/faculty-staff">People</a>
+    </nav>
+
+    <div class="cc-search">
+      <span>⌕</span>
+      <input type="search" placeholder="Search...">
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<section class="cc-hero">
+  <div class="cc-hero-content">
+    <div class="cc-eyebrow">
+      <span></span>
+      CAMPUSCONNECT / ON CAMPUS
+      <span></span>
+    </div>
+
+    <h1>Upcoming<br>Events</h1>
+
+    <p>
+      Lectures, orientations, student activities, seminars,
+      workshops, competitions, and community events with clear
+      dates and locations.
+    </p>
+
+    <div class="cc-pills">
+      <span>▣ &nbsp; Easy to explore</span>
+      <span>♧ &nbsp; University community</span>
+      <span>◆ &nbsp; CampusConnect</span>
+    </div>
+  </div>
+
+  <div class="cc-hero-art">
+    <img
+      src="/themes/custom/campusconnect/images/events/hero-campus.jpg"
+      onerror="this.src='/themes/custom/campusconnect/images/events/hero-campus.svg'"
+      alt="CampusConnect university campus">
+  </div>
+</section>
+
+<section class="cc-events-section cc-card-collection" aria-labelledby="cc-events-list-title">
+
+  <div class="cc-collection-heading">
+    <span>Campus life</span>
+    <h2 id="cc-events-list-title">Find your next campus moment</h2>
+    <p>Explore upcoming opportunities, all in one clear place.</p>
+  </div>
+
+  <div class="cc-event-grid">
+
+    <article class="cc-event-card">
+
+      <div class="cc-event-image">
+        <img
+          src="/themes/custom/campusconnect/images/events/capstone.jpg"
+          onerror="this.src='/themes/custom/campusconnect/images/events/capstone.svg'"
+          alt="Students attending BSIT Capstone Orientation">
+        <div class="cc-date">
+          <small>SEP</small>
+          <strong>18</strong>
+          <em>2026</em>
+        </div>
+      </div>
+
+      <div class="cc-event-body">
+        <div class="cc-meta">
+          <span class="cc-tag">ON CAMPUS</span>
+          <span>✦ Main Auditorium</span>
+          <span>◷ 9:00 AM – 4:00 PM</span>
+        </div>
+
+        <h2>BSIT Capstone Orientation</h2>
+
+        <p>
+          Orientation session covering capstone project requirements,
+          documentation, development standards, and presentation procedures.
+        </p>
+
+        <div class="cc-card-footer">
+          <a class="cc-explore-link" href="#event-story" data-event-story="capstone">EXPLORE</a>
+          <a href="#event-story" data-event-story="capstone">View full story&nbsp; →</a>
+        </div>
+      </div>
+
+    </article>
+
+    <article class="cc-event-card">
+
+      <div class="cc-event-image">
+        <img
+          src="/themes/custom/campusconnect/images/events/workshop.jpg"
+          onerror="this.src='/themes/custom/campusconnect/images/events/workshop.svg'"
+          alt="Students participating in a web development workshop">
+        <div class="cc-date">
+          <small>SEP</small>
+          <strong>18</strong>
+          <em>2026</em>
+        </div>
+      </div>
+
+      <div class="cc-event-body">
+        <div class="cc-meta">
+          <span class="cc-tag">ON CAMPUS</span>
+          <span>✦ Computer Laboratory 2</span>
+          <span>◷ 1:00 PM – 5:00 PM</span>
+        </div>
+
+        <h2>Web Development Workshop</h2>
+
+        <p>
+          Hands-on workshop introducing students to modern web
+          development practices and content management systems.
+        </p>
+
+        <div class="cc-card-footer">
+          <a class="cc-explore-link" href="#event-story" data-event-story="workshop">EXPLORE</a>
+          <a href="#event-story" data-event-story="workshop">View full story&nbsp; →</a>
+        </div>
+      </div>
+
+    </article>
+
+    <article class="cc-event-card">
+
+      <div class="cc-event-image">
+        <img
+          src="/themes/custom/campusconnect/images/events/competition.jpg"
+          onerror="this.src='/themes/custom/campusconnect/images/events/competition.svg'"
+          alt="Students participating in a technology competition">
+        <div class="cc-date">
+          <small>SEP</small>
+          <strong>25</strong>
+          <em>2026</em>
+        </div>
+      </div>
+
+      <div class="cc-event-body">
+        <div class="cc-meta">
+          <span class="cc-tag">ON CAMPUS</span>
+          <span>✦ University Activity Center</span>
+          <span>◷ 10:00 AM – 12:00 PM</span>
+        </div>
+
+        <h2>Student Technology Competition</h2>
+
+        <p>
+          A friendly technology competition where students demonstrate
+          programming, web development, and problem-solving skills.
+        </p>
+
+        <div class="cc-card-footer">
+          <a class="cc-explore-link" href="#event-story" data-event-story="competition">EXPLORE</a>
+          <a href="#event-story" data-event-story="competition">View full story&nbsp; →</a>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+
+<div id="event-story" class="cc-event-modal" aria-hidden="true">
+  <div class="cc-event-modal-backdrop" data-event-close></div>
+
+  <div class="cc-event-modal-dialog"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="cc-event-modal-title">
+
+    <button type="button"
+            class="cc-event-modal-close"
+            aria-label="Close event story"
+            data-event-close>
+      ×
+    </button>
+
+    <div class="cc-event-modal-kicker">
+      CAMPUSCONNECT / ON CAMPUS
+    </div>
+
+    <div class="cc-event-modal-layout">
+
+      <div class="cc-event-modal-copy">
+        <div class="cc-event-modal-label">EXPLORE THE EVENT</div>
+
+        <h2 id="cc-event-modal-title"></h2>
+
+        <p class="cc-event-modal-intro"></p>
+
+        <div class="cc-event-modal-meta">
+          <span class="cc-modal-date"></span>
+          <span class="cc-modal-location"></span>
+          <span class="cc-modal-time"></span>
+        </div>
+
+        <div class="cc-event-modal-body">
+          <h3 class="cc-modal-heading"></h3>
+          <p class="cc-modal-paragraph1"></p>
+          <p class="cc-modal-paragraph2"></p>
+        </div>
+
+        <div class="cc-event-modal-highlights">
+          <h3>What to expect</h3>
+          <div class="cc-modal-highlights-grid"></div>
+        </div>
+      </div>
+
+      <div class="cc-event-modal-image-wrap">
+        <img class="cc-event-modal-image" src="" alt="">
+      </div>
+
+    </div>
+
+    <div class="cc-event-modal-footer">
+      <span>CampusConnect</span>
+      <button type="button" data-event-close>Close story ×</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById('event-story');
+  if (!modal) return;
+
+  const title = modal.querySelector('#cc-event-modal-title');
+  const intro = modal.querySelector('.cc-event-modal-intro');
+  const date = modal.querySelector('.cc-modal-date');
+  const location = modal.querySelector('.cc-modal-location');
+  const time = modal.querySelector('.cc-modal-time');
+  const heading = modal.querySelector('.cc-modal-heading');
+  const paragraph1 = modal.querySelector('.cc-modal-paragraph1');
+  const paragraph2 = modal.querySelector('.cc-modal-paragraph2');
+  const image = modal.querySelector('.cc-event-modal-image');
+  const highlights = modal.querySelector('.cc-modal-highlights-grid');
+
+  const events = {
+    capstone: {
+      title: 'BSIT Capstone Orientation',
+      intro: 'A focused orientation designed to help graduating BSIT students understand the capstone journey from project planning through final presentation.',
+      date: 'SEP 18, 2026',
+      location: 'Main Auditorium',
+      time: '9:00 AM – 4:00 PM',
+      heading: 'Turning your capstone idea into a working solution.',
+      paragraph1: 'The BSIT Capstone Orientation gives students a clear starting point for one of the most important projects of their academic journey. Participants will be introduced to project requirements, documentation standards, development expectations, and the process they will follow throughout the capstone.',
+      paragraph2: 'The session also helps students understand how to organize their project timeline, work effectively with their team, prepare technical documentation, and confidently present the solution they have built.',
+      image: '/themes/custom/campusconnect/images/events/capstone.jpg',
+      highlights: [
+        'Capstone project requirements',
+        'Documentation standards',
+        'Development guidelines',
+        'Presentation preparation'
+      ]
+    },
+
+    workshop: {
+      title: 'Web Development Workshop',
+      intro: 'A hands-on learning session where students explore modern web development practices and discover how websites are built with today’s content management tools.',
+      date: 'SEP 18, 2026',
+      location: 'Computer Laboratory 2',
+      time: '1:00 PM – 5:00 PM',
+      heading: 'Build, experiment, and understand the modern web.',
+      paragraph1: 'The Web Development Workshop takes students beyond theory and into practical web development. Participants will explore how websites are structured, developed, maintained, and connected to modern content management systems.',
+      paragraph2: 'Through practical exercises, students will have opportunities to experiment, troubleshoot problems, and understand how the different parts of a web project work together to create a useful digital experience.',
+      image: '/themes/custom/campusconnect/images/events/workshop.jpg',
+      highlights: [
+        'Hands-on web development',
+        'Modern web practices',
+        'Content management systems',
+        'Practical exercises'
+      ]
+    },
+
+    competition: {
+      title: 'Student Technology Competition',
+      intro: 'A friendly campus challenge where students put programming, web development, creativity, and problem-solving skills to the test.',
+      date: 'SEP 25, 2026',
+      location: 'University Activity Center',
+      time: '10:00 AM – 12:00 PM',
+      heading: 'Where technical skills meet creativity and teamwork.',
+      paragraph1: 'The Student Technology Competition brings students together for a friendly challenge built around programming, web development, and problem-solving. Teams will put their technical knowledge to work while competing in an energetic campus environment.',
+      paragraph2: 'Beyond the competition itself, the event gives students a chance to demonstrate how they think under pressure, communicate ideas, solve technical problems, and transform their knowledge into working solutions.',
+      image: '/themes/custom/campusconnect/images/events/competition.jpg',
+      highlights: [
+        'Programming challenges',
+        'Web development',
+        'Problem solving',
+        'Student teamwork'
+      ]
+    }
+  };
+
+  function openStory(key) {
+    const event = events[key];
+    if (!event) return;
+
+    title.textContent = event.title;
+    intro.textContent = event.intro;
+    date.textContent = event.date;
+    location.textContent = '✦ ' + event.location;
+    time.textContent = '◷ ' + event.time;
+    heading.textContent = event.heading;
+    paragraph1.textContent = event.paragraph1;
+    paragraph2.textContent = event.paragraph2;
+    image.src = event.image;
+    image.alt = event.title;
+
+    highlights.innerHTML = event.highlights.map(function (item) {
+      return '<div class="cc-modal-highlight"><span>✓</span><strong>' + item + '</strong></div>';
+    }).join('');
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('cc-event-modal-open');
+
+    const closeButton = modal.querySelector('.cc-event-modal-close');
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeStory() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('cc-event-modal-open');
+
+    if (window.location.hash === '#event-story') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  document.querySelectorAll('[data-event-story]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      openStory(this.getAttribute('data-event-story'));
+    });
+  });
+
+  modal.querySelectorAll('[data-event-close]').forEach(function (button) {
+    button.addEventListener('click', closeStory);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeStory();
+    }
+  });
+})();
+</script>
+
+<footer class="cc-footer">
+  <div class="cc-footer-inner">
+
+    <div class="cc-footer-brand">
+      <span class="cc-logo">C</span>
+      <div>
+        <strong>CampusConnect</strong>
+        <small>Higher education, connected.</small>
+      </div>
+    </div>
+
+    <nav class="cc-footer-nav" aria-label="Footer navigation">
+      <a href="{{ path('<front>') }}">Home</a>
+      <a href="/announcements">Announcements</a>
+      <a href="/campus-news">News</a>
+      <a href="/events">Events</a>
+      <a href="/departments">Departments</a>
+      <a href="/faculty-staff">People</a>
+    </nav>
+
+    <div class="cc-footer-platform">
+
+      <div class="cc-drupal-brand">
+        <img src="/core/misc/logo/drupal-logo.svg" alt="Drupal">
+        <strong>Drupal</strong>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">▣</span>
+        <span>Drupal-powered</span>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">♿</span>
+        <span>Accessible by design</span>
+      </div>
+
+      <div class="cc-footer-feature">
+        <span class="cc-footer-feature-icon">▯</span>
+        <span>Mobile ready</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+

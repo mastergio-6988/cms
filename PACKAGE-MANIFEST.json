@@ -1,0 +1,15 @@
+{
+  "project": "CampusConnect",
+  "drupal": "11.4.6",
+  "content_navigation": "same-page CampusConnect shell",
+  "public_routes": [
+    "/campusconnect-home",
+    "/announcements",
+    "/campus-news",
+    "/events",
+    "/departments",
+    "/faculty-staff"
+  ],
+  "database_dump": "database/campusconnect-live.sql.gz",
+  "identity_preserved": true
+}

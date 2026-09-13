@@ -1,0 +1,452 @@
+<div class="cc-site">
+
+  <header class="cc-header cc-reference-header">
+
+    <div class="cc-reference-nav">
+
+      <div class="cc-reference-container">
+
+        <a class="cc-reference-brand" href="{{ path('<front>') }}">
+          <span class="cc-reference-logo">C</span>
+
+          <span class="cc-reference-brand-text">
+            <strong>CampusConnect</strong>
+            <small>HIGHER EDUCATION</small>
+          </span>
+        </a>
+
+        <nav class="cc-reference-menu" aria-label="Main navigation">
+
+          <a class="{% if is_front %}is-active{% endif %}" href="{{ path('<front>') }}">Home</a>
+          <a href="/announcements">Announcements</a>
+          <a href="/campus-news">News</a>
+          <a href="/events">Events</a>
+          <a href="/departments">Departments</a>
+          <a class="{% if app.request.getPathInfo() == '/faculty-staff' %}is-active{% endif %}" href="/faculty-staff">People</a>
+
+        </nav>
+
+        <a class="cc-reference-search" href="/search/node">
+          <span class="cc-reference-search-icon"></span>
+          <span>Search...</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main class="cc-reference-main{% if is_front %} cc-home-main{% endif %}">
+
+    {% if is_front %}
+
+      <div class="cc-reference-container">
+
+        <!-- HERO -->
+
+        <section class="cc-reference-hero">
+
+          <div class="cc-reference-hero-content">
+
+            <div class="cc-reference-kicker">
+              <span></span>
+              CAMPUSCONNECT / HOME
+            </div>
+
+            <h1>
+              One campus.<br>
+              <strong>Everything connected.</strong>
+            </h1>
+
+            <p>
+              Your university information, people, news, events, departments,
+              and announcements — organized into clear destinations.
+            </p>
+
+            <div class="cc-reference-actions">
+
+              <a class="cc-reference-primary" href="/announcements">
+                Explore CampusConnect
+                <span>→</span>
+              </a>
+
+              <a class="cc-reference-secondary" href="/faculty-staff">
+                Meet our people
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="cc-reference-hero-image">
+
+            <img
+              src="/themes/custom/campusconnect/images/campus/campus-aerial.jpg"
+              alt="Campus aerial view">
+
+            <div class="cc-reference-hero-overlay"></div>
+
+            <div class="cc-reference-hero-badge">
+
+              <small>CAMPUS<span>CONNECT</span></small>
+
+              <strong>Higher education, connected.</strong>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- EXPLORE -->
+
+        <section class="cc-reference-explore">
+
+          <div class="cc-reference-section-heading">
+
+            <div>
+
+              <div class="cc-reference-kicker">
+                <span></span>
+                EXPLORE
+              </div>
+
+              <h2>Start where you need to go.</h2>
+
+            </div>
+
+            <p>
+              Six clear destinations. No mixed content on the home page.
+            </p>
+
+          </div>
+
+
+          <div class="cc-reference-grid">
+
+
+            <!-- ANNOUNCEMENTS -->
+
+            <a class="cc-reference-card cc-card-blue"
+               href="/announcements">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/announcement.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    01
+                  </span>
+
+                </div>
+
+                <h3>Announcements</h3>
+
+                <p>
+                  Official notices, deadlines, academic updates,
+                  and important campus communications.
+                </p>
+
+                <span class="cc-card-link">
+                  Open Announcements <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- NEWS -->
+
+            <a class="cc-reference-card cc-card-green"
+               href="/campus-news">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/news.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    02
+                  </span>
+
+                </div>
+
+                <h3>News</h3>
+
+                <p>
+                  Research, achievements, community stories,
+                  academic milestones, and campus highlights.
+                </p>
+
+                <span class="cc-card-link">
+                  Read campus news <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- EVENTS -->
+
+            <a class="cc-reference-card cc-card-purple"
+               href="/events">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/event.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    03
+                  </span>
+
+                </div>
+
+                <h3>Events</h3>
+
+                <p>
+                  Lectures, orientations, seminars, workshops,
+                  competitions, and campus activities.
+                </p>
+
+                <span class="cc-card-link">
+                  See events <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- DEPARTMENTS -->
+
+            <a class="cc-reference-card cc-card-orange"
+               href="/departments">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/department.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    04
+                  </span>
+
+                </div>
+
+                <h3>Departments</h3>
+
+                <p>
+                  Academic departments, programs, offices,
+                  services, and the university units behind them.
+                </p>
+
+                <span class="cc-card-link">
+                  Browse departments <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- PEOPLE -->
+
+            <a class="cc-reference-card cc-card-teal"
+               href="/faculty-staff">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/people.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    05
+                  </span>
+
+                </div>
+
+                <h3>People</h3>
+
+                <p>
+                  Faculty and staff profiles, expertise,
+                  responsibilities, and contact information.
+                </p>
+
+                <span class="cc-card-link">
+                  Meet our people <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- SEARCH -->
+
+            <a class="cc-reference-card cc-card-search"
+               href="/search/node">
+
+              <div class="cc-card-background"></div>
+
+              <div class="cc-card-content">
+
+                <div class="cc-card-top">
+
+                  <span class="cc-card-icon">
+                    <img src="/themes/custom/campusconnect/icons/search.svg"
+                         alt="">
+                  </span>
+
+                  <span class="cc-card-number">
+                    06
+                  </span>
+
+                </div>
+
+                <h3>Search</h3>
+
+                <p>
+                  Find people, departments, news, events,
+                  and more across the campus.
+                </p>
+
+                <span class="cc-card-link">
+                  Search CampusConnect <b>→</b>
+                </span>
+
+              </div>
+
+            </a>
+
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+    {% else %}
+
+      <div class="cc-reference-container cc-inner-page">
+
+        {% if page.highlighted %}
+          <section class="cc-highlighted">
+            {{ page.highlighted }}
+          </section>
+        {% endif %}
+
+        {% if page.breadcrumb %}
+          <div class="cc-breadcrumb">
+            {{ page.breadcrumb }}
+          </div>
+        {% endif %}
+
+        {% if page.title %}
+          <header class="cc-page-heading">
+            {{ page.title }}
+          </header>
+        {% endif %}
+
+        <div class="cc-content-area">
+          {{ page.content }}
+        </div>
+
+      </div>
+
+    {% endif %}
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="cc-reference-footer">
+
+    <div class="cc-reference-footer-inner">
+
+      <div class="cc-footer-brand">
+
+        <span class="cc-footer-logo">C</span>
+
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+
+      </div>
+
+
+      <nav class="cc-footer-links">
+
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+
+      </nav>
+
+
+      <div class="cc-footer-platform">
+
+        <div class="cc-drupal-brand">
+
+          <img
+            src="/core/misc/logo/drupal-logo.svg"
+            alt="Drupal">
+
+          <strong>Drupal</strong>
+
+        </div>
+
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>

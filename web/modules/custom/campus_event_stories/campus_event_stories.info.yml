@@ -1,0 +1,5 @@
+name: Campus Event Stories
+type: module
+description: 'Provides detailed CampusConnect event story pages.'
+package: CampusConnect
+core_version_requirement: ^10 || ^11

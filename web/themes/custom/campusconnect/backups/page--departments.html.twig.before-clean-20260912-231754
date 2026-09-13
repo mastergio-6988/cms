@@ -1,0 +1,1358 @@
+{% do attach_library('campusconnect/departments-rebuild') %}
+
+<div class="cc-site cc-departments-page">
+
+  <header class="cc-header">
+    <div class="cc-header-inner">
+
+      <a class="cc-brand" href="{{ path('<front>') }}">
+        <span class="cc-logo">C</span>
+        <span class="cc-brand-text">
+          <strong>CampusConnect</strong>
+          <small>HIGHER EDUCATION</small>
+        </span>
+      </a>
+
+      <nav class="cc-nav" aria-label="Main navigation">
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a class="active" href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <a class="cc-search" href="/search/node">
+        <span class="cc-search-icon"></span>
+        <span>Search...</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="cc-dept-hero">
+
+      <div class="cc-dept-hero-watermark">ACADEMICS</div>
+
+      <div class="cc-dept-hero-content">
+
+        <div class="cc-dept-eyebrow">
+          <span></span>
+          CAMPUSCONNECT / EXPLORE
+          <span></span>
+        </div>
+
+        <h1>Departments</h1>
+
+        <p>
+          Explore academic departments, offices, services, programs,
+          contact points, and the people who support the university community.
+        </p>
+
+        <div class="cc-dept-pills">
+          <span>▣ &nbsp; Easy to explore</span>
+          <span>♧ &nbsp; University community</span>
+          <span>◆ &nbsp; CampusConnect</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cc-dept-section">
+
+      <div class="cc-dept-grid">
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-01-file-computer-centre-laboratory-back-view-at-obafemi-aw.jpg"
+              alt="Agricultural Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">01</span>
+            </div>
+
+            <h2>Agricultural Department</h2>
+
+            <p>
+              Explore agricultural education, practical learning,
+              sustainable development, food systems, and opportunities
+              supporting the university and surrounding community.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="agricultural">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-02-file-digital-computer-laboratory-jpg.jpg"
+              alt="Information Technology Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">02</span>
+            </div>
+
+            <h2>Information Technology Department</h2>
+
+            <p>
+              The Information Technology Department provides academic
+              programs focused on software development, networking,
+              databases, cybersecurity, information systems, and digital innovation.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="technology">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-03-file-former-computer-laboratory-tower-geograph-org-uk-1.jpg"
+              alt="Business Administration Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">03</span>
+            </div>
+
+            <h2>Business Administration Department</h2>
+
+            <p>
+              The Business Administration Department develops students'
+              knowledge and skills in management, entrepreneurship,
+              marketing, leadership, and business operations.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="business">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-04-file-barbara-mcclintock-1902-1992-shown-in-her-laborato.jpg"
+              alt="Education Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">04</span>
+            </div>
+
+            <h2>Education Department</h2>
+
+            <p>
+              The Education Department prepares students for careers
+              in teaching, educational leadership, curriculum,
+              learning development, and community service.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="education">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="department-story"
+       class="cc-dept-modal"
+       aria-hidden="true">
+
+    <div class="cc-dept-modal-backdrop" data-department-close></div>
+
+    <div class="cc-dept-modal-dialog"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="cc-dept-modal-title">
+
+      <button class="cc-dept-modal-close"
+              type="button"
+              data-department-close
+              aria-label="Close department story">
+        ×
+      </button>
+
+      <div class="cc-dept-modal-kicker">
+        CAMPUSCONNECT / ACADEMIC DIRECTORY
+      </div>
+
+      <div class="cc-dept-modal-layout">
+
+        <div class="cc-dept-modal-copy">
+
+          <span class="cc-dept-modal-label">EXPLORE THE DEPARTMENT</span>
+
+          <h2 id="cc-dept-modal-title"></h2>
+
+          <p class="cc-dept-modal-intro"></p>
+
+          <div class="cc-dept-modal-body"></div>
+
+          <div class="cc-dept-modal-highlights"></div>
+
+        </div>
+
+        <div class="cc-dept-modal-image-wrap">
+          <img class="cc-dept-modal-image" src="" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="cc-footer">
+    <div class="cc-footer-inner">
+
+      <div class="cc-footer-brand">
+        <span class="cc-footer-logo">C</span>
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <div class="cc-footer-platform">
+        <div class="cc-drupal-brand">
+          <img src="/core/misc/logo/drupal-logo.svg" alt="Drupal">
+          <strong>Drupal</strong>
+        </div>
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+
+<style id="cc-departments-events-style">
+/* =========================================================
+   CampusConnect Departments — Events/News visual rebuild
+   Scoped only to /departments template.
+   ========================================================= */
+
+.cc-header {
+  width: 100% !important;
+  background: #fff !important;
+  border-bottom: 1px solid #dce8f5 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.cc-header-inner {
+  max-width: 1320px !important;
+  min-height: 92px !important;
+  margin: 0 auto !important;
+  padding: 0 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 28px !important;
+  box-sizing: border-box !important;
+}
+
+.cc-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex: 0 0 auto !important;
+  text-decoration: none !important;
+}
+
+.cc-logo {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #147fe8 !important;
+  color: #fff !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 8px 20px rgba(20,127,232,.18) !important;
+}
+
+.cc-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.05 !important;
+}
+
+.cc-brand-text strong {
+  color: #073b78 !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+}
+
+.cc-brand-text small {
+  margin-top: 6px !important;
+  color: #4d8ed3 !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+}
+
+.cc-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  flex: 1 1 auto !important;
+}
+
+.cc-nav a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 0 13px !important;
+  border-radius: 28px !important;
+  color: #073b78 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  white-space: nowrap !important;
+  transition: .2s ease !important;
+}
+
+.cc-nav a:hover {
+  background: #edf6ff !important;
+  color: #0877e6 !important;
+}
+
+.cc-nav a.active,
+.cc-nav a.is-active {
+  color: #fff !important;
+  background: #1284ed !important;
+  box-shadow: 0 8px 18px rgba(18,132,237,.18) !important;
+}
+
+.cc-search {
+  width: 208px !important;
+  height: 46px !important;
+  flex: 0 0 208px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #cfe2f6 !important;
+  border-radius: 25px !important;
+  background: #f8fcff !important;
+  color: #7aa5d1 !important;
+  text-decoration: none !important;
+}
+
+.cc-search:hover {
+  border-color: #8fc4f7 !important;
+  background: #fff !important;
+}
+
+.cc-search-icon {
+  width: 16px !important;
+  height: 16px !important;
+  border: 2px solid #0a6fc9 !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  display: inline-block !important;
+  flex: 0 0 16px !important;
+}
+
+.cc-search-icon::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 7px !important;
+  height: 2px !important;
+  background: #0a6fc9 !important;
+  right: -5px !important;
+  bottom: -2px !important;
+  transform: rotate(45deg) !important;
+  border-radius: 2px !important;
+}
+
+/* Main Departments shell */
+.cc-departments-page,
+.cc-departments-page main,
+.cc-departments-page .cc-main {
+  box-sizing: border-box !important;
+}
+
+.cc-departments-page {
+  background: #fff !important;
+  color: #073b78 !important;
+}
+
+/* Keep the existing hero but give it the same polished proportions */
+.cc-departments-page .cc-hero {
+  max-width: 1240px !important;
+  margin: 72px auto 30px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1px solid #cfe4f8 !important;
+  background:
+    radial-gradient(circle at 10% 50%, rgba(91,181,255,.16), transparent 42%),
+    linear-gradient(110deg,#eef8ff 0%,#f8fbff 52%,#fff 100%) !important;
+  min-height: 345px !important;
+  box-shadow: 0 12px 35px rgba(23,73,120,.06) !important;
+}
+
+.cc-departments-page .cc-hero-content {
+  padding: 62px 55px !important;
+}
+
+.cc-departments-page .cc-eyebrow {
+  color: #087cf0 !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+}
+
+.cc-departments-page .cc-hero h1 {
+  color: #073f80 !important;
+  font-size: clamp(48px,5vw,72px) !important;
+  line-height: .98 !important;
+  font-weight: 850 !important;
+  margin: 22px 0 18px !important;
+}
+
+.cc-departments-page .cc-hero p {
+  max-width: 760px !important;
+  color: #4b7db5 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+.cc-departments-page .cc-pills {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 9px !important;
+  margin-top: 24px !important;
+}
+
+.cc-departments-page .cc-pills span {
+  border: 1px solid #c6e0fa !important;
+  background: rgba(255,255,255,.85) !important;
+  color: #0872d6 !important;
+  border-radius: 24px !important;
+  padding: 10px 16px !important;
+  font-size: 12px !important;
+  font-weight: 750 !important;
+}
+
+/* Cards — same 3-column rhythm as Events */
+.cc-departments-page .cc-department-grid,
+.cc-departments-page .cc-card-grid {
+  max-width: 1240px !important;
+  margin: 30px auto 85px !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 20px !important;
+}
+
+.cc-departments-page .cc-department-card,
+.cc-departments-page .cc-card {
+  overflow: hidden !important;
+  border: 1px solid #d2e1ef !important;
+  border-top: 3px solid #315db2 !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  box-shadow: 0 12px 28px rgba(19,65,108,.07) !important;
+  transition: transform .2s ease,box-shadow .2s ease !important;
+}
+
+.cc-departments-page .cc-department-card:hover,
+.cc-departments-page .cc-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 38px rgba(19,65,108,.12) !important;
+}
+
+.cc-departments-page .cc-department-card img,
+.cc-departments-page .cc-card img {
+  width: 100% !important;
+  height: 245px !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.cc-departments-page .cc-department-card-content,
+.cc-departments-page .cc-card-content {
+  padding: 25px 22px 28px !important;
+  min-height: 260px !important;
+  box-sizing: border-box !important;
+}
+
+.cc-departments-page .cc-department-card h2,
+.cc-departments-page .cc-card h2 {
+  color: #073b78 !important;
+  font-size: 23px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  margin: 16px 0 12px !important;
+}
+
+.cc-departments-page .cc-department-card p,
+.cc-departments-page .cc-card p {
+  color: #527ca9 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.cc-departments-page .cc-explore,
+.cc-departments-page .cc-explore-link {
+  display: inline-flex !important;
+  border: 1px solid #b8dbfa !important;
+  border-radius: 20px !important;
+  padding: 8px 13px !important;
+  color: #087cf0 !important;
+  background: #f7fcff !important;
+  font-size: 10px !important;
+  font-weight: 850 !important;
+  letter-spacing: .12em !important;
+  text-decoration: none !important;
+}
+
+.cc-departments-page .cc-view-link,
+.cc-departments-page a[href*="department"] {
+  color: #073f80 !important;
+  font-weight: 750 !important;
+}
+
+/* Footer — match Events/News footer */
+.cc-departments-page .cc-footer {
+  width: 100% !important;
+  background: #073b68 !important;
+  color: #fff !important;
+  margin-top: 40px !important;
+}
+
+.cc-departments-page .cc-footer-inner {
+  max-width: 1320px !important;
+  min-height: 145px !important;
+  margin: 0 auto !important;
+  padding: 28px 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+  box-sizing: border-box !important;
+}
+
+.cc-departments-page .cc-footer-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 13px !important;
+}
+
+.cc-departments-page .cc-footer-logo {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #1284ed !important;
+  color: #fff !important;
+  font-size: 25px !important;
+  font-weight: 800 !important;
+}
+
+.cc-departments-page .cc-footer-brand strong {
+  display: block !important;
+  color: #fff !important;
+  font-size: 14px !important;
+}
+
+.cc-departments-page .cc-footer-brand small {
+  display: block !important;
+  margin-top: 7px !important;
+  color: #b7d0e9 !important;
+  font-size: 10px !important;
+}
+
+.cc-departments-page .cc-footer-inner nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 25px !important;
+}
+
+.cc-departments-page .cc-footer-inner nav a {
+  color: #b7d0e9 !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+}
+
+.cc-departments-page .cc-footer-inner nav a:hover {
+  color: #fff !important;
+}
+
+.cc-departments-page .cc-footer-platform {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  color: #a9c5df !important;
+  font-size: 11px !important;
+}
+
+.cc-departments-page .cc-drupal-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  color: #fff !important;
+  padding-right: 18px !important;
+  border-right: 1px solid rgba(255,255,255,.18) !important;
+}
+
+.cc-departments-page .cc-drupal-brand img {
+  width: 31px !important;
+  height: 31px !important;
+}
+
+@media (max-width: 1050px) {
+  .cc-header-inner {
+    flex-wrap: wrap !important;
+    padding: 18px 22px !important;
+  }
+
+  .cc-nav {
+    order: 3 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+  }
+
+  .cc-search {
+    width: 170px !important;
+    flex-basis: 170px !important;
+  }
+
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-card-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    padding: 0 22px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .cc-header-inner {
+    display: block !important;
+  }
+
+  .cc-brand {
+    margin-bottom: 16px !important;
+  }
+
+  .cc-nav {
+    margin-bottom: 14px !important;
+  }
+
+  .cc-search {
+    width: 100% !important;
+  }
+
+  .cc-departments-page .cc-hero {
+    margin: 28px 14px 22px !important;
+  }
+
+  .cc-departments-page .cc-hero-content {
+    padding: 40px 24px !important;
+  }
+
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-card-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 14px !important;
+  }
+
+  .cc-departments-page .cc-footer-inner {
+    display: block !important;
+    padding: 30px 22px !important;
+  }
+
+  .cc-departments-page .cc-footer-inner nav {
+    margin: 25px 0 !important;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    flex-wrap: wrap !important;
+  }
+}
+</style>
+
+<style id="cc-departments-final-polish">
+/* ============================================================
+   CampusConnect DEPARTMENTS — FINAL POLISH
+   Events / News spacing + footer alignment
+   Scoped to this template because the style is loaded here.
+   ============================================================ */
+
+/* ---------- PAGE FOUNDATION ---------- */
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cc-departments-page {
+  width: 100% !important;
+  min-height: 100vh !important;
+  background: #fff !important;
+  color: #073b78 !important;
+  overflow-x: hidden !important;
+}
+
+/* ---------- HEADER ---------- */
+
+.cc-departments-page .cc-header {
+  width: 100% !important;
+  min-height: 92px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #dce8f5 !important;
+  box-shadow: 0 2px 12px rgba(15,65,110,.035) !important;
+}
+
+.cc-departments-page .cc-header-inner {
+  width: min(1320px, calc(100% - 48px)) !important;
+  min-height: 92px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 26px !important;
+  box-sizing: border-box !important;
+}
+
+/* Brand */
+
+.cc-departments-page .cc-brand {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 13px !important;
+}
+
+.cc-departments-page .cc-logo {
+  width: 51px !important;
+  height: 51px !important;
+  border-radius: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #1384ed !important;
+  color: #fff !important;
+  font-size: 29px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 8px 22px rgba(19,132,237,.18) !important;
+}
+
+.cc-departments-page .cc-brand-text strong {
+  color: #073b78 !important;
+  font-size: 23px !important;
+  line-height: 1 !important;
+}
+
+.cc-departments-page .cc-brand-text small {
+  display: block !important;
+  margin-top: 6px !important;
+  color: #4d8ed3 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+}
+
+/* Navigation */
+
+.cc-departments-page .cc-nav {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+}
+
+.cc-departments-page .cc-nav a {
+  min-height: 48px !important;
+  padding: 0 13px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 25px !important;
+  color: #073b78 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  white-space: nowrap !important;
+  transition: all .2s ease !important;
+}
+
+.cc-departments-page .cc-nav a:hover {
+  color: #0879e7 !important;
+  background: #eff7ff !important;
+}
+
+/* Force Departments to be the active navigation item. */
+
+.cc-departments-page .cc-nav a.active,
+.cc-departments-page .cc-nav a.is-active {
+  color: #073b78 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.cc-departments-page .cc-nav a[href="/departments"] {
+  color: #fff !important;
+  background: #1284ed !important;
+  box-shadow: 0 8px 18px rgba(18,132,237,.18) !important;
+}
+
+/* Search */
+
+.cc-departments-page .cc-search {
+  flex: 0 0 208px !important;
+  width: 208px !important;
+  height: 46px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 0 16px !important;
+  border: 1px solid #cfe2f6 !important;
+  border-radius: 24px !important;
+  background: #f8fcff !important;
+  color: #79a5d2 !important;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+.cc-departments-page main {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 70px !important;
+}
+
+/* ---------- HERO ---------- */
+
+.cc-departments-page .cc-hero {
+  width: min(1240px, calc(100% - 48px)) !important;
+  min-height: 350px !important;
+  margin: 48px auto 30px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  border: 1px solid #cfe3f7 !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 8% 55%, rgba(94,184,255,.17), transparent 40%),
+    linear-gradient(112deg,#eef8ff 0%,#f7fbff 55%,#fff 100%) !important;
+  box-shadow: 0 12px 34px rgba(19,67,108,.055) !important;
+}
+
+.cc-departments-page .cc-hero-content {
+  min-height: 350px !important;
+  padding: 58px 56px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.cc-departments-page .cc-eyebrow {
+  margin: 0 0 17px !important;
+  color: #087cf0 !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  letter-spacing: .19em !important;
+}
+
+.cc-departments-page .cc-hero h1 {
+  margin: 0 0 17px !important;
+  color: #073f80 !important;
+  font-size: clamp(48px,5vw,70px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.035em !important;
+  font-weight: 850 !important;
+}
+
+.cc-departments-page .cc-hero p {
+  max-width: 780px !important;
+  margin: 0 !important;
+  color: #4d7fb7 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+
+.cc-departments-page .cc-pills {
+  margin-top: 23px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 9px !important;
+}
+
+.cc-departments-page .cc-pills span {
+  padding: 9px 15px !important;
+  border: 1px solid #c8e0f8 !important;
+  border-radius: 22px !important;
+  background: rgba(255,255,255,.88) !important;
+  color: #0873d8 !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+}
+
+/* ---------- DEPARTMENT GRID ---------- */
+
+.cc-departments-page .cc-department-grid,
+.cc-departments-page .cc-card-grid {
+  width: min(1240px, calc(100% - 48px)) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+/* ---------- DEPARTMENT CARDS ---------- */
+
+.cc-departments-page .cc-department-card,
+.cc-departments-page .cc-card {
+  min-width: 0 !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  border: 1px solid #d5e2ee !important;
+  border-top: 3px solid #315db2 !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  box-shadow: 0 12px 30px rgba(18,65,108,.065) !important;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+
+.cc-departments-page .cc-department-card:hover,
+.cc-departments-page .cc-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 42px rgba(18,65,108,.12) !important;
+}
+
+/* Consistent image area */
+
+.cc-departments-page .cc-department-card img,
+.cc-departments-page .cc-card img {
+  width: 100% !important;
+  height: 245px !important;
+  min-height: 245px !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Card content */
+
+.cc-departments-page .cc-department-card-content,
+.cc-departments-page .cc-card-content {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 24px 22px 25px !important;
+  box-sizing: border-box !important;
+}
+
+.cc-departments-page .cc-department-card h2,
+.cc-departments-page .cc-card h2 {
+  margin: 15px 0 11px !important;
+  color: #073b78 !important;
+  font-size: 21px !important;
+  line-height: 1.18 !important;
+  font-weight: 800 !important;
+}
+
+.cc-departments-page .cc-department-card p,
+.cc-departments-page .cc-card p {
+  margin: 0 !important;
+  color: #527ca9 !important;
+  font-size: 13.5px !important;
+  line-height: 1.7 !important;
+}
+
+/* Explore pill */
+
+.cc-departments-page .cc-explore,
+.cc-departments-page .cc-explore-link {
+  align-self: flex-start !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 13px !important;
+  border: 1px solid #bcdcf8 !important;
+  border-radius: 20px !important;
+  background: #f7fcff !important;
+  color: #087cf0 !important;
+  text-decoration: none !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  font-weight: 850 !important;
+  letter-spacing: .12em !important;
+}
+
+/* View story */
+
+.cc-departments-page .cc-department-card a[href*="department"],
+.cc-departments-page .cc-card a[href*="department"] {
+  color: #073f80 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+/*
+ * The previous screenshot showed the footer navigation stacked
+ * vertically. These selectors intentionally target the footer
+ * directly so its layout cannot collapse into a vertical list.
+ */
+
+.cc-departments-page .cc-footer {
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  background: #073b68 !important;
+  color: #fff !important;
+  overflow: hidden !important;
+}
+
+.cc-departments-page .cc-footer-inner {
+  width: min(1320px, calc(100% - 64px)) !important;
+  min-height: 128px !important;
+  margin: 0 auto !important;
+  padding: 25px 0 !important;
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: 250px 1fr auto !important;
+  align-items: center !important;
+  column-gap: 35px !important;
+}
+
+/* Footer brand */
+
+.cc-departments-page .cc-footer-brand {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.cc-departments-page .cc-footer-logo {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #1284ed !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+}
+
+.cc-departments-page .cc-footer-brand strong {
+  display: block !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+}
+
+.cc-departments-page .cc-footer-brand small {
+  display: block !important;
+  margin-top: 7px !important;
+  color: #b7d0e9 !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+/* Footer navigation — ALWAYS horizontal on desktop */
+
+.cc-departments-page .cc-footer-inner nav,
+.cc-departments-page .cc-footer-links {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 21px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cc-departments-page .cc-footer-inner nav a,
+.cc-departments-page .cc-footer-links a {
+  display: inline-block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #b9d1e9 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+}
+
+.cc-departments-page .cc-footer-inner nav a:hover,
+.cc-departments-page .cc-footer-links a:hover {
+  color: #fff !important;
+}
+
+/* Drupal / platform section */
+
+.cc-departments-page .cc-footer-platform {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 17px !important;
+  color: #a9c5df !important;
+  font-size: 10px !important;
+  white-space: nowrap !important;
+}
+
+.cc-departments-page .cc-drupal-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding-right: 17px !important;
+  border-right: 1px solid rgba(255,255,255,.18) !important;
+  color: #fff !important;
+}
+
+.cc-departments-page .cc-drupal-brand img {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+}
+
+/* ---------- FOOTER EXTRA DECORATION ---------- */
+
+.cc-departments-page .cc-footer::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -130px !important;
+  bottom: -240px !important;
+  width: 470px !important;
+  height: 470px !important;
+  border: 1px solid rgba(255,255,255,.055) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+.cc-departments-page .cc-footer {
+  position: relative !important;
+}
+
+/* ---------- LARGE LAPTOP ---------- */
+
+@media (max-width: 1180px) {
+  .cc-departments-page .cc-header-inner {
+    width: calc(100% - 36px) !important;
+    gap: 15px !important;
+  }
+
+  .cc-departments-page .cc-nav a {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+    font-size: 13px !important;
+  }
+
+  .cc-departments-page .cc-search {
+    flex-basis: 175px !important;
+    width: 175px !important;
+  }
+
+  .cc-departments-page .cc-footer-inner {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 210px 1fr auto !important;
+    column-gap: 20px !important;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    gap: 11px !important;
+  }
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 950px) {
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-card-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .cc-departments-page .cc-footer-inner {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 22px !important;
+    padding: 25px 0 !important;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    grid-column: 1 / -1 !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .cc-departments-page .cc-header-inner {
+    width: calc(100% - 28px) !important;
+    min-height: 0 !important;
+    padding: 16px 0 !important;
+    display: block !important;
+  }
+
+  .cc-departments-page .cc-brand {
+    margin-bottom: 14px !important;
+  }
+
+  .cc-departments-page .cc-nav {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding-bottom: 7px !important;
+  }
+
+  .cc-departments-page .cc-nav a {
+    flex: 0 0 auto !important;
+  }
+
+  .cc-departments-page .cc-search {
+    width: 100% !important;
+    margin-top: 9px !important;
+  }
+
+  .cc-departments-page .cc-hero {
+    width: calc(100% - 28px) !important;
+    margin: 28px auto 22px !important;
+    min-height: 0 !important;
+  }
+
+  .cc-departments-page .cc-hero-content {
+    min-height: 0 !important;
+    padding: 40px 23px !important;
+  }
+
+  .cc-departments-page .cc-hero h1 {
+    font-size: 48px !important;
+  }
+
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-card-grid {
+    width: calc(100% - 28px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .cc-departments-page .cc-department-card,
+  .cc-departments-page .cc-card {
+    min-height: 0 !important;
+  }
+
+  .cc-departments-page .cc-footer-inner {
+    width: calc(100% - 36px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 21px !important;
+    padding: 27px 0 !important;
+  }
+
+  .cc-departments-page .cc-footer-inner nav,
+  .cc-departments-page .cc-footer-links {
+    justify-content: flex-start !important;
+    gap: 12px 20px !important;
+  }
+
+  .cc-departments-page .cc-footer-platform {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    justify-content: flex-start !important;
+  }
+}
+</style>

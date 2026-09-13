@@ -1,0 +1,277 @@
+<div class="cc-site">
+
+<header class="cc-header cc-reference-header">
+
+    <div class="cc-reference-nav">
+
+      <div class="cc-reference-container">
+
+        <a class="cc-reference-brand" href="{{ path('<front>') }}">
+          <span class="cc-reference-logo">C</span>
+
+          <span class="cc-reference-brand-text">
+            <strong>CampusConnect</strong>
+            <small>HIGHER EDUCATION</small>
+          </span>
+        </a>
+
+        <nav class="cc-reference-menu" aria-label="Main navigation">
+
+          <a href="{{ path('<front>') }}">Home</a>
+          <a class="is-active" href="/announcements">Announcements</a>
+          <a href="/campus-news">News</a>
+          <a href="/events">Events</a>
+          <a href="/departments">Departments</a>
+          <a href="/faculty-staff">People</a>
+
+        </nav>
+
+        <a class="cc-reference-search" href="/search/node">
+          <span class="cc-reference-search-icon"></span>
+          <span>Search...</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+<main class="cc-announcements-page">
+
+
+    {# HERO #}
+
+    <section class="cc-announcement-hero">
+
+      <div class="cc-announcement-hero-copy">
+
+        <div class="cc-announcement-kicker">
+          <span></span>
+          CAMPUSCONNECT / ANNOUNCEMENTS
+        </div>
+
+        <h1>
+          Stay informed.
+          <strong>Stay connected.</strong>
+        </h1>
+
+        <p>
+          Official university notices, academic updates,
+          enrollment information, and important campus
+          communications.
+        </p>
+
+        <div class="cc-hero-stats">
+
+          <div class="cc-hero-stat">
+            <span class="cc-stat-icon">✓</span>
+            <div>
+              <strong>Official</strong>
+              <small>Campus updates</small>
+            </div>
+          </div>
+
+          <div class="cc-hero-stat">
+            <span class="cc-stat-icon">◷</span>
+            <div>
+              <strong>Updated</strong>
+              <small>Regularly</small>
+            </div>
+          </div>
+
+          <div class="cc-hero-stat">
+            <span class="cc-stat-icon">◆</span>
+            <div>
+              <strong>Connected</strong>
+              <small>University-wide</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="cc-announcement-hero-image">
+
+        <img
+          src="/themes/custom/campusconnect/images/campus/campus-aerial.jpg"
+          alt="Campus aerial view"
+        >
+
+        <div class="cc-hero-image-overlay"></div>
+
+        <div class="cc-hero-message">
+          <span>YOUR CAMPUS</span>
+          <strong>YOUR PRIORITY.</strong>
+        </div>
+
+        <div class="cc-hero-badge">
+          <span>●</span>
+          LIVE CAMPUS UPDATES
+        </div>
+
+      </div>
+
+    </section>
+
+
+    {# CONTROLS #}
+
+    <section class="cc-announcement-toolbar">
+
+      <div class="cc-toolbar-left">
+
+        <div class="cc-section-label">
+          <span></span>
+          CAMPUS UPDATES
+        </div>
+
+        <h2>Latest announcements</h2>
+
+      </div>
+
+
+      <div class="cc-toolbar-right">
+
+        <div class="cc-announcement-search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            placeholder="Search announcements..."
+            aria-label="Search announcements"
+          >
+        </div>
+
+        <button type="button" class="cc-sort-button">
+          Newest first
+          <span>⌄</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    {# FILTERS #}
+
+    <section class="cc-announcement-filter-row">
+
+      <div class="cc-announcement-filters">
+
+        <button class="is-active" type="button">
+          <span>●</span> All
+        </button>
+
+        <button type="button">
+          <span>◆</span> Academic
+        </button>
+
+        <button type="button">
+          <span>!</span> Important
+        </button>
+
+        <button type="button">
+          <span>●</span> Campus
+        </button>
+
+        <button type="button">
+          <span>▣</span> Events
+        </button>
+
+      </div>
+
+      <div class="cc-announcement-count">
+        Official CampusConnect updates
+      </div>
+
+    </section>
+
+
+    {# CONTENT #}
+
+    <section class="cc-announcement-content">
+
+      {{ page.content }}
+
+    </section>
+
+
+    {# INFORMATION CTA #}
+
+    <section class="cc-announcement-cta">
+
+      <div class="cc-cta-icon">
+        ♢
+      </div>
+
+      <div class="cc-cta-copy">
+        <span>STAY INFORMED</span>
+        <h3>Don't miss important campus updates.</h3>
+        <p>
+          Check CampusConnect regularly for university
+          announcements, deadlines, and campus notices.
+        </p>
+      </div>
+
+      <a href="/campus-news" class="cc-cta-button">
+        Explore campus news
+        <span>→</span>
+      </a>
+
+    </section>
+
+  </main>
+
+<footer class="cc-reference-footer">
+
+    <div class="cc-reference-footer-inner">
+
+      <div class="cc-footer-brand">
+
+        <span class="cc-footer-logo">C</span>
+
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+
+      </div>
+
+
+      <nav class="cc-footer-links">
+
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+
+      </nav>
+
+
+      <div class="cc-footer-platform">
+
+        <div class="cc-drupal-brand">
+
+          <img
+            src="/core/misc/logo/drupal-logo.svg"
+            alt="Drupal">
+
+          <strong>Drupal</strong>
+
+        </div>
+
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>

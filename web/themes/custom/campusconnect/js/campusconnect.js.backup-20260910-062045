@@ -1,0 +1,52 @@
+(function (Drupal, once) {
+  'use strict';
+
+  Drupal.behaviors.campusConnectMotion = {
+    attach: function (context) {
+
+      once('campus-connect-motion', '.cc-home-feature', context).forEach(function (feature) {
+        var images = feature.querySelectorAll('img');
+
+        if (images.length < 2) {
+          return;
+        }
+
+        var index = 0;
+
+        images.forEach(function (image, i) {
+          image.classList.toggle('is-active', i === 0);
+        });
+
+        setInterval(function () {
+          images[index].classList.remove('is-active');
+
+          index = (index + 1) % images.length;
+
+          images[index].classList.add('is-active');
+        }, 5500);
+      });
+
+      once('campus-connect-reveal', '.cc-home-section, .cc-list-card, .cc-home-quicklink', context)
+        .forEach(function (element) {
+          if (!('IntersectionObserver' in window)) {
+            element.classList.add('cc-visible');
+            return;
+          }
+
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('cc-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.12
+          });
+
+          observer.observe(element);
+        });
+    }
+  };
+
+})(Drupal, once);

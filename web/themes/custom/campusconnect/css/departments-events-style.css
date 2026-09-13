@@ -1,0 +1,250 @@
+/* ============================================================
+   DEPARTMENTS — COPY OF THE COMPACT EVENTS VISUAL SYSTEM
+   Departments only.
+   ============================================================ */
+
+body.cc-departments-page {
+  margin:0 !important;
+  background:#f6faff !important;
+  color:#17365d;
+}
+
+body.cc-departments-page main {
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Same compact hero proportions as Events */
+.cc-departments-page .cc-hero {
+  position:relative !important;
+  min-height:315px !important;
+  height:315px !important;
+  overflow:hidden !important;
+  background:#dff2ff !important;
+}
+
+.cc-departments-page .cc-hero-art {
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+}
+
+.cc-departments-page .cc-hero-art img {
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+
+.cc-departments-page .cc-hero::after {
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(
+    90deg,
+    rgba(7,45,84,.78) 0%,
+    rgba(7,45,84,.58) 34%,
+    rgba(7,45,84,.10) 67%,
+    rgba(7,45,84,0) 100%
+  ) !important;
+  pointer-events:none !important;
+}
+
+.cc-departments-page .cc-hero-content {
+  position:relative !important;
+  z-index:2 !important;
+  max-width:1420px !important;
+  height:100% !important;
+  margin:0 auto !important;
+  padding:42px 50px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+}
+
+.cc-departments-page .cc-eyebrow {
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  color:#fff !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  letter-spacing:.12em !important;
+}
+
+.cc-departments-page .cc-eyebrow span {
+  width:32px !important;
+  height:2px !important;
+  background:#fff !important;
+}
+
+.cc-departments-page .cc-hero h1 {
+  margin:10px 0 14px !important;
+  color:#fff !important;
+  font-size:clamp(42px,5vw,64px) !important;
+  line-height:.98 !important;
+  font-weight:850 !important;
+  letter-spacing:-.04em !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.25) !important;
+}
+
+.cc-departments-page .cc-hero p {
+  max-width:620px !important;
+  margin:0 !important;
+  color:#fff !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+  font-weight:600 !important;
+}
+
+.cc-departments-page .cc-pills {
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin-top:20px !important;
+}
+
+.cc-departments-page .cc-pills span {
+  padding:9px 15px !important;
+  border:1px solid rgba(255,255,255,.7) !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.94) !important;
+  color:#1267c2 !important;
+  font-size:12px !important;
+  font-weight:750 !important;
+}
+
+/* Same compact card grid rhythm */
+.cc-departments-page .cc-department-grid,
+.cc-departments-page .cc-departments-grid,
+.cc-departments-page .department-grid {
+  width:min(1380px,92%) !important;
+  margin:0 auto !important;
+  padding:42px 0 62px !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:24px !important;
+  box-sizing:border-box !important;
+}
+
+.cc-departments-page .cc-department-card,
+.cc-departments-page .cc-departments-card,
+.cc-departments-page .department-card {
+  overflow:hidden !important;
+  background:#fff !important;
+  border:1px solid #dce8f4 !important;
+  border-radius:18px !important;
+  box-shadow:0 8px 24px rgba(29,77,121,.08) !important;
+}
+
+.cc-departments-page .cc-department-image,
+.cc-departments-page .cc-departments-image,
+.cc-departments-page .department-image {
+  height:205px !important;
+  overflow:hidden !important;
+}
+
+.cc-departments-page .cc-department-image img,
+.cc-departments-page .cc-departments-image img,
+.cc-departments-page .department-image img,
+.cc-departments-page .cc-department-card img,
+.cc-departments-page .cc-departments-card img,
+.cc-departments-page .department-card img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+}
+
+.cc-departments-page .cc-department-body,
+.cc-departments-page .cc-departments-body,
+.cc-departments-page .department-body {
+  padding:20px 22px 22px !important;
+}
+
+.cc-departments-page .cc-department-meta,
+.cc-departments-page .cc-departments-meta,
+.cc-departments-page .department-meta {
+  margin-bottom:9px !important;
+  color:#6b89aa !important;
+  font-size:11px !important;
+  font-weight:800 !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+
+.cc-departments-page .cc-department-body h2,
+.cc-departments-page .cc-department-body h3,
+.cc-departments-page .cc-departments-body h2,
+.cc-departments-page .cc-departments-body h3,
+.cc-departments-page .department-body h2,
+.cc-departments-page .department-body h3 {
+  margin:0 0 10px !important;
+  color:#104b86 !important;
+  font-size:23px !important;
+  line-height:1.18 !important;
+  font-weight:850 !important;
+}
+
+.cc-departments-page .cc-department-body p,
+.cc-departments-page .cc-departments-body p,
+.cc-departments-page .department-body p {
+  margin:0 !important;
+  color:#6684a5 !important;
+  font-size:14px !important;
+  line-height:1.55 !important;
+}
+
+.cc-departments-page .cc-card-footer,
+.cc-departments-page .cc-department-footer,
+.cc-departments-page .department-footer {
+  display:flex !important;
+  align-items:center !important;
+  gap:16px !important;
+  margin-top:16px !important;
+  padding-top:15px !important;
+  border-top:1px solid #e2edf6 !important;
+}
+
+.cc-departments-page .cc-card-footer a,
+.cc-departments-page .cc-department-footer a,
+.cc-departments-page .department-footer a {
+  color:#0877e8 !important;
+  font-size:13px !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+
+/* Footer follows the same page width/rhythm */
+.cc-departments-page .cc-footer {
+  margin-top:0 !important;
+}
+
+@media (max-width:1000px) {
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-departments-grid,
+  .cc-departments-page .department-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media (max-width:700px) {
+  .cc-departments-page .cc-hero {
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .cc-departments-page .cc-hero-content {
+    min-height:300px !important;
+    padding:38px 24px !important;
+  }
+
+  .cc-departments-page .cc-department-grid,
+  .cc-departments-page .cc-departments-grid,
+  .cc-departments-page .department-grid {
+    grid-template-columns:1fr !important;
+    width:94% !important;
+  }
+}

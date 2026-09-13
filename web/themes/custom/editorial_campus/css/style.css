@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.theme-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.theme-header {
+  position: relative;
+  z-index: 10;
+}
+
+.theme-container.theme-content {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  min-height: 65vh;
+}
+
+.theme-brand {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.35rem;
+}
+
+.theme-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-nav a {
+  text-decoration: none;
+}
+
+.theme-footer {
+  padding: 35px 0;
+}
+
+.theme-footer .theme-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.theme-highlighted {
+  padding: 20px 0;
+}
+
+@media (max-width: 760px) {
+  .theme-container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .theme-nav ul {
+    gap: 12px;
+  }
+
+  .theme-footer .theme-container {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   ACADEMIC CLASSIC
+   ========================================================= */
+
+.academic-classic {
+  background: #f6f2e9;
+  color: #202b35;
+}
+
+.academic-classic .theme-header {
+  background: #ffffff;
+  border-bottom: 5px solid #8b6f47;
+}
+
+.academic-classic .theme-container:first-child {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.academic-classic .theme-brand {
+  color: #25364a;
+  font-family: Georgia, serif;
+}
+
+.academic-classic .theme-nav a {
+  color: #25364a;
+}
+
+.academic-classic .theme-footer {
+  background: #25364a;
+  color: #ffffff;
+}
+
+/* =========================================================
+   EDITORIAL CAMPUS
+   ========================================================= */
+
+.editorial-campus {
+  background: #ffffff;
+  color: #171717;
+}
+
+.editorial-campus .theme-header {
+  background: #111111;
+  color: #ffffff;
+}
+
+.editorial-campus .theme-container:first-child {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.editorial-campus .theme-brand,
+.editorial-campus .theme-nav a {
+  color: #ffffff;
+}
+
+.editorial-campus .theme-content {
+  max-width: 1000px;
+}
+
+.editorial-campus .theme-footer {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* =========================================================
+   FUTURE CAMPUS
+   ========================================================= */
+
+.future-campus {
+  background: #090b14;
+  color: #edf2ff;
+}
+
+.future-campus .theme-header {
+  background: rgba(12, 15, 30, .96);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.future-campus .theme-container:first-child {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.future-campus .theme-brand {
+  color: #ffffff;
+}
+
+.future-campus .theme-nav a {
+  color: #dfe7ff;
+}
+
+.future-campus .theme-content {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(75,100,255,.16), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(0,220,255,.12), transparent 28%);
+}
+
+.future-campus .theme-footer {
+  background: #05060b;
+}
+
+/* =========================================================
+   GREEN CAMPUS
+   ========================================================= */
+
+.green-campus {
+  background: #f4f7f0;
+  color: #26352a;
+}
+
+.green-campus .theme-header {
+  background: #ffffff;
+  border-bottom: 1px solid #d4dfd0;
+}
+
+.green-campus .theme-container:first-child {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.green-campus .theme-brand {
+  color: #235b3a;
+}
+
+.green-campus .theme-nav a {
+  color: #315b43;
+}
+
+.green-campus .theme-content {
+  background: linear-gradient(180deg, #f4f7f0, #ffffff);
+}
+
+.green-campus .theme-footer {
+  background: #235b3a;
+  color: #ffffff;
+}
+
+/* =========================================================
+   GLOBAL UNIVERSITY
+   ========================================================= */
+
+.global-university {
+  background: #f7f9fc;
+  color: #243247;
+}
+
+.global-university .theme-header {
+  background: #ffffff;
+  box-shadow: 0 2px 15px rgba(0,0,0,.07);
+}
+
+.global-university .theme-container:first-child {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.global-university .theme-brand {
+  color: #174a7c;
+}
+
+.global-university .theme-nav a {
+  color: #315879;
+}
+
+.global-university .theme-content {
+  background:
+    linear-gradient(135deg, rgba(23,74,124,.06), transparent 45%);
+}
+
+.global-university .theme-footer {
+  background: #174a7c;
+  color: #ffffff;
+}
+
+/* =========================================================
+   INNOVATION CAMPUS
+   ========================================================= */
+
+.innovation-campus {
+  background: #f5f5f5;
+  color: #181818;
+}
+
+.innovation-campus .theme-header {
+  background: #181818;
+  color: #ffffff;
+}
+
+.innovation-campus .theme-container:first-child {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.innovation-campus .theme-brand,
+.innovation-campus .theme-nav a {
+  color: #ffffff;
+}
+
+.innovation-campus .theme-content {
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(0,0,0,.035) 50%, transparent 51%);
+  background-size: 40px 40px;
+}
+
+.innovation-campus .theme-footer {
+  background: #181818;
+  color: #ffffff;
+}

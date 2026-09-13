@@ -1,0 +1,37 @@
+campusconnect_home.visuals:
+  type: config_object
+  label: 'CampusConnect homepage visual settings'
+  mapping:
+    announcement_fallback:
+      type: integer
+      label: 'Announcements fallback image'
+    campus_news_fallback:
+      type: integer
+      label: 'Campus News fallback image'
+    campus_event_fallback:
+      type: integer
+      label: 'Events fallback image'
+    department_fallback:
+      type: integer
+      label: 'Departments fallback image'
+    faculty_staff_fallback:
+      type: integer
+      label: 'Faculty & Staff fallback image'
+    academic_communication:
+      type: integer
+      label: 'Academic communication image'
+    student_experience:
+      type: integer
+      label: 'Student experience image'
+    people_expertise:
+      type: integer
+      label: 'People and expertise image'
+    events_calendar:
+      type: integer
+      label: 'Events and calendar image'
+    find_information:
+      type: integer
+      label: 'Find information image'
+    connected_campus:
+      type: integer
+      label: 'Connected campus image'

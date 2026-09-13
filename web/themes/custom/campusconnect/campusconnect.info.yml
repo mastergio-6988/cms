@@ -1,0 +1,16 @@
+name: CampusConnect
+type: theme
+base theme: false
+core_version_requirement: ^11
+description: 'Modern CampusConnect university information portal theme.'
+libraries:
+- campusconnect/global
+regions:
+  header: Header
+  primary_menu: Primary Menu
+  hero: Hero
+  highlighted: Highlighted
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+

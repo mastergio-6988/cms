@@ -1,0 +1,8 @@
+/* Final layout pass for Events and Departments card collections. */
+.cc-card-collection { position:relative; padding:54px 0 82px !important; background:radial-gradient(circle at 8% 0,rgba(32,169,255,.13),transparent 25rem),linear-gradient(180deg,#f4faff 0,#fff 33rem) !important; }
+.cc-collection-heading { width:min(1370px,calc(100% - 112px)); margin:0 auto 28px; }
+.cc-collection-heading span { display:block; margin-bottom:7px; color:#087be8; font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+.cc-collection-heading h2 { margin:0; color:#082f62; font-size:clamp(28px,3vw,42px); line-height:1.08; letter-spacing:-.04em; }
+.cc-collection-heading p { margin:9px 0 0; color:#5c7e9f; font-size:15px; font-weight:600; }
+.cc-card-collection .cc-event-grid { margin:0 auto !important; }
+@media (max-width:760px) { .cc-card-collection { padding:38px 0 56px !important; } .cc-collection-heading { width:calc(100% - 40px); margin-bottom:20px; } }

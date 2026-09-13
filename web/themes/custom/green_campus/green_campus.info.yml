@@ -1,0 +1,13 @@
+name: 'Green Campus'
+type: theme
+description: 'A sustainability-focused academic theme for Campus CMS.'
+core_version_requirement: '^10 || ^11'
+base theme: false
+libraries:
+  - green_campus/global
+regions:
+  header: Header
+  primary_menu: Primary menu
+  highlighted: Highlighted
+  content: Content
+  footer: Footer

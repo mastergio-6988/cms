@@ -1,0 +1,13 @@
+name: 'Global University'
+type: theme
+description: 'An international university presentation theme for Campus CMS.'
+core_version_requirement: '^10 || ^11'
+base theme: false
+libraries:
+  - global_university/global
+regions:
+  header: Header
+  primary_menu: Primary menu
+  highlighted: Highlighted
+  content: Content
+  footer: Footer

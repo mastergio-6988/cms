@@ -1,0 +1,20 @@
+campusconnect_home.dashboard:
+  title: 'CampusConnect dashboard'
+  description: 'Modern content overview for CampusConnect.'
+  route_name: campusconnect_home.dashboard
+  parent: system.admin_content
+  weight: -20
+
+campusconnect_home.server_control:
+  title: 'Live Campus server'
+  description: 'Start or take the public CampusConnect portal offline.'
+  route_name: campusconnect_home.server_control
+  parent: system.admin_config_system
+  weight: 20
+
+campusconnect_home.visuals:
+  title: 'Homepage visuals'
+  description: 'Choose the images used throughout the CampusConnect homepage.'
+  route_name: campusconnect_home.visuals
+  parent: campusconnect_home.dashboard
+  weight: 10

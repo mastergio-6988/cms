@@ -1,0 +1,40 @@
+/* CampusConnect high-visibility interactive treatment. */
+:root { --cc-electric-lime: #8cff00; }
+@media (hover: hover) {
+  a:not(.skip-link), button, input, select, textarea, [role="button"], [role="menuitem"], .cc-event-card, .cc-list-card, .cc-home-card, .cc-floating-card, .cc-event-modal-dialog, .cc-department-modal-dialog, .cc-search-panel, .cc-menu-panel { transition: outline-color .16s ease, outline-offset .16s ease, box-shadow .16s ease !important; }
+  a:not(.skip-link):hover, button:hover, input:hover, select:hover, textarea:hover, [role="button"]:hover, [role="menuitem"]:hover, .cc-event-card:hover, .cc-list-card:hover, .cc-home-card:hover, .cc-floating-card:hover, .cc-event-modal-dialog:hover, .cc-department-modal-dialog:hover, .cc-search-panel:hover, .cc-menu-panel:hover { outline: 3px solid rgba(0, 168, 255, .95) !important; outline-offset: 3px !important; box-shadow: 0 0 0 5px rgba(124, 58, 237, .23), 0 0 18px 4px rgba(0, 168, 255, .65), 0 0 32px 8px rgba(236, 72, 153, .30) !important; animation: cc-electric-outline 1.05s steps(2, end) infinite; }
+}
+a:not(.skip-link):focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [role="button"]:focus-visible, [role="menuitem"]:focus-visible { outline: 4px solid var(--cc-electric-lime) !important; outline-offset: 4px !important; box-shadow: 0 0 0 7px rgba(124, 58, 237, .32), 0 0 22px rgba(0, 168, 255, .85) !important; }
+@keyframes cc-electric-outline { 0%,100% { outline-color:#00d9ff; filter:saturate(1.15); } 50% { outline-color:#bd4bff; filter:saturate(1.45) brightness(1.06); } }
+.cc-click-spark { position:fixed; z-index:2147483647; width:1px; height:1px; pointer-events:none; }
+.cc-click-spark i { position:absolute; left:0; top:0; width:4px; height:32px; border-radius:999px; transform-origin:50% 0; background:linear-gradient(#fff 0 12%,#00e5ff 28%,#8b5cff 52%,#ff3cac 75%,#dfff00 100%); box-shadow:0 0 8px #00d9ff,0 0 15px #ff35c8; animation:cc-rainbow-spark .62s cubic-bezier(.12,.74,.25,1) forwards; }
+@keyframes cc-rainbow-spark { from { opacity:1; transform:rotate(var(--cc-angle)) translateY(0) scaleY(.2); } to { opacity:0; transform:rotate(var(--cc-angle)) translateY(-62px) scaleY(1.18); } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; } .cc-click-spark { display:none; } }
+
+/* Mouse-following border trace for the homepage-style cards and heroes. */
+.cc-hover-trace {
+  position: relative;
+  isolation: isolate;
+}
+
+.cc-hover-trace > .cc-border-trace {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(135px circle at var(--cc-mx, 50%) var(--cc-my, 50%), #ffffff 0 2%, #00e5ff 10%, #8b5cff 34%, #ff3cac 53%, transparent 74%) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: opacity .2s ease;
+  filter: drop-shadow(0 0 5px rgba(0, 210, 255, .8)) drop-shadow(0 0 9px rgba(236, 72, 153, .5));
+}
+
+.cc-hover-trace:hover > .cc-border-trace,
+.cc-hover-trace:focus-within > .cc-border-trace {
+  opacity: 1;
+}

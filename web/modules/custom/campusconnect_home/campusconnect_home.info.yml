@@ -1,0 +1,5 @@
+name: CampusConnect Home
+type: module
+description: 'CampusConnect public portal, listings, dashboard and live server controls.'
+package: CampusConnect
+core_version_requirement: ^11

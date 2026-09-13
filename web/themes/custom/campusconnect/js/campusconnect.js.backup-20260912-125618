@@ -1,0 +1,251 @@
+(function (Drupal, once) {
+  'use strict';
+
+  Drupal.behaviors.campusConnectUI = {
+    attach: function (context) {
+
+      /*
+       * Mobile navigation
+       */
+      once('cc-mobile-menu', '.cc-menu-toggle', context).forEach(function (button) {
+        var nav = document.getElementById(button.getAttribute('aria-controls'));
+
+        if (!nav) {
+          return;
+        }
+
+        button.addEventListener('click', function () {
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+
+          button.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open', !expanded);
+          document.body.classList.toggle('cc-menu-open', !expanded);
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            button.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            document.body.classList.remove('cc-menu-open');
+          });
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            button.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            document.body.classList.remove('cc-menu-open');
+            button.focus();
+          }
+        });
+      });
+
+
+      /*
+       * Search panel
+       */
+      once('cc-search', '.cc-search-button', context).forEach(function (button) {
+        var panel = document.getElementById('cc-search-panel');
+
+        if (!panel) {
+          return;
+        }
+
+        button.addEventListener('click', function () {
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+
+          button.setAttribute('aria-expanded', String(!expanded));
+
+          if (expanded) {
+            panel.hidden = true;
+          }
+          else {
+            panel.hidden = false;
+
+            var input = panel.querySelector('input');
+
+            if (input) {
+              window.setTimeout(function () {
+                input.focus();
+              }, 50);
+            }
+          }
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !panel.hidden) {
+            panel.hidden = true;
+            button.setAttribute('aria-expanded', 'false');
+            button.focus();
+          }
+        });
+      });
+
+
+      /*
+       * Scroll reveal
+       */
+      once(
+        'cc-reveal',
+        '.cc-home-section, .cc-list-card, .cc-home-quicklink, .cc-home-snapshot-card',
+        context
+      ).forEach(function (element) {
+
+        if (!('IntersectionObserver' in window)) {
+          element.classList.add('cc-visible');
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('cc-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12
+        });
+
+        observer.observe(element);
+      });
+
+    }
+  };
+
+})(Drupal, once);
+
+
+/*
+ * CampusConnect premium header.
+ *
+ * Adds:
+ * - scroll state
+ * - current navigation state
+ * - safe same-origin path comparison
+ */
+(function (Drupal, once) {
+  'use strict';
+
+  Drupal.behaviors.campusConnectHeader = {
+    attach: function (context) {
+
+      once('cc-header-enhancement', '[data-cc-header]', context).forEach(function (header) {
+
+        var navLinks = header.querySelectorAll('.cc-main-nav > a');
+        var currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+
+        navLinks.forEach(function (link) {
+          try {
+            var linkUrl = new URL(link.href, window.location.origin);
+
+            if (linkUrl.origin !== window.location.origin) {
+              return;
+            }
+
+            var linkPath = linkUrl.pathname.replace(/\/+$/, '') || '/';
+
+            if (linkPath === currentPath) {
+              link.classList.add('is-active');
+              link.setAttribute('aria-current', 'page');
+            }
+          }
+          catch (error) {
+            /* Ignore malformed navigation URLs. */
+          }
+        });
+
+        function updateScrollState() {
+          header.classList.toggle('is-scrolled', window.scrollY > 12);
+        }
+
+        updateScrollState();
+
+        window.addEventListener('scroll', updateScrollState, {
+          passive: true
+        });
+
+      });
+
+    }
+  };
+
+})(Drupal, once);
+
+
+/*
+ * CampusConnect editorial hero rotation.
+ *
+ * Uses only locally stored CampusConnect imagery.
+ * No external network requests.
+ */
+(function (Drupal, once) {
+  'use strict';
+
+  Drupal.behaviors.campusConnectEditorial = {
+    attach: function (context) {
+
+      once(
+        'cc-editorial-hero',
+        '.cc-home-hero .cc-hero-image',
+        context
+      ).forEach(function (hero) {
+
+        var reducedMotion = window.matchMedia &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (reducedMotion) {
+          return;
+        }
+
+        var images = [
+          '/themes/custom/campusconnect/images/campus/campus-aerial.jpg',
+          '/themes/custom/campusconnect/images/campus/campus-life.jpg',
+          '/themes/custom/campusconnect/images/campus/campus-aerial.jpg'
+        ];
+
+        var index = 0;
+        var changing = false;
+
+        function showNextImage() {
+          if (changing) {
+            return;
+          }
+
+          changing = true;
+
+          hero.style.opacity = '0';
+
+          window.setTimeout(function () {
+            index = (index + 1) % images.length;
+
+            hero.style.backgroundImage =
+              'linear-gradient(90deg,' +
+              'rgba(10,14,38,.92) 0%,' +
+              'rgba(10,14,38,.72) 43%,' +
+              'rgba(10,14,38,.24) 100%),' +
+              'url("' + images[index] + '")';
+
+            hero.style.opacity = '1';
+
+            window.setTimeout(function () {
+              changing = false;
+            }, 800);
+
+          }, 750);
+        }
+
+        /*
+         * Begin after the page has settled.
+         * Six seconds gives the visitor enough time to read the hero.
+         */
+        window.setTimeout(function () {
+          window.setInterval(showNextImage, 6500);
+        }, 3000);
+
+      });
+
+    }
+  };
+
+})(Drupal, once);

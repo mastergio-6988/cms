@@ -1,0 +1,316 @@
+{% do attach_library('campusconnect/news_home') %}
+
+{#
+/**
+ * CampusConnect — News / Campus News
+ *
+ * Home page shell is intentionally reused here so the global
+ * header and footer stay exactly synchronized with Home.
+ */
+#}
+
+<div class="cc-site cc-news-page">
+
+  <header class="cc-header cc-reference-header">
+
+    <div class="cc-reference-nav">
+
+      <div class="cc-reference-container">
+
+        <a class="cc-reference-brand" href="{{ path('<front>') }}">
+          <span class="cc-reference-logo">C</span>
+
+          <span class="cc-reference-brand-text">
+            <strong>CampusConnect</strong>
+            <small>HIGHER EDUCATION</small>
+          </span>
+        </a>
+
+        <nav class="cc-reference-menu" aria-label="Main navigation">
+
+          <a class="" href="{{ path('<front>') }}">Home</a>
+          <a href="/announcements">Announcements</a>
+          <a href="/campus-news"><span class="cc-news-active-label">News</span></a>
+          <a href="/events">Events</a>
+          <a href="/departments">Departments</a>
+          <a href="/faculty-staff">People</a>
+
+        </nav>
+
+        <a class="cc-reference-search" href="/search/node">
+          <span class="cc-reference-search-icon"></span>
+          <span>Search...</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="cc-reference-main cc-news-main">
+    <div class="cc-news-home-container">
+
+      <!-- NEWS HERO -->
+    <section class="cc-news-hero">
+
+      <div class="cc-news-hero-copy">
+
+        <div class="cc-news-kicker">
+          <span></span>
+          CAMPUSCONNECT / CAMPUS NEWS
+        </div>
+
+        <h1>
+          Stories that<br>
+          <em>move our campus.</em>
+        </h1>
+
+        <p>
+          Discover student achievements, academic milestones, research,
+          community stories, and the people creating meaningful change
+          across CampusConnect.
+        </p>
+
+        <div class="cc-news-hero-actions">
+          <a href="#latest-news" class="cc-news-primary-btn">
+            Explore latest stories
+            <span>→</span>
+          </a>
+
+          <a href="#news-topics" class="cc-news-secondary-btn">
+            Browse topics
+          </a>
+        </div>
+
+        <div class="cc-news-stats">
+          <div>
+            <strong>01</strong>
+            <span>Student life</span>
+          </div>
+
+          <div>
+            <strong>02</strong>
+            <span>Academic excellence</span>
+          </div>
+
+          <div>
+            <strong>03</strong>
+            <span>Campus community</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cc-news-hero-visual">
+
+        <div class="cc-news-photo-main">
+          <img
+            src="/sites/default/files/homepage-visuals/campus-news.jpg"
+            alt="Campus News"
+          >
+        </div>
+
+        <div class="cc-news-floating-card cc-news-floating-card--top">
+          <span class="cc-news-floating-icon">✦</span>
+          <div>
+            <small>THIS WEEK</small>
+            <strong>Campus stories</strong>
+          </div>
+        </div>
+
+        <div class="cc-news-floating-card cc-news-floating-card--bottom">
+          <span class="cc-news-live-dot"></span>
+          <div>
+            <small>CONNECTED CAMPUS</small>
+            <strong>What's happening now</strong>
+          </div>
+        </div>
+
+        <span class="cc-news-orbit cc-news-orbit--one"></span>
+        <span class="cc-news-orbit cc-news-orbit--two"></span>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOPIC NAVIGATION -->
+    <section class="cc-news-topics" id="news-topics">
+
+      <div class="cc-news-section-heading">
+        <div>
+          <span class="cc-news-section-kicker">
+            CAMPUS STORIES
+          </span>
+
+          <h2>Explore what’s happening.</h2>
+        </div>
+
+        <p>
+          Find the stories that matter to students,
+          faculty, staff, and the wider university community.
+        </p>
+      </div>
+
+      <div class="cc-news-topic-buttons">
+
+        <button type="button" class="cc-news-topic is-active" data-news-filter="all">
+          <span>✦</span>
+          All stories
+        </button>
+
+        <button type="button" class="cc-news-topic" data-news-filter="student">
+          <span>●</span>
+          Student life
+        </button>
+
+        <button type="button" class="cc-news-topic" data-news-filter="academic">
+          <span>◆</span>
+          Academic
+        </button>
+
+        <button type="button" class="cc-news-topic" data-news-filter="research">
+          <span>⌁</span>
+          Research
+        </button>
+
+        <button type="button" class="cc-news-topic" data-news-filter="community">
+          <span>♥</span>
+          Community
+        </button>
+
+        <button type="button" class="cc-news-topic" data-news-filter="events">
+          <span>□</span>
+          Events
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- LATEST NEWS -->
+    <section class="cc-news-latest" id="latest-news">
+
+      <div class="cc-news-latest-head">
+
+        <div>
+          <span class="cc-news-section-kicker">
+            CAMPUS UPDATES
+          </span>
+
+          <h2>Latest campus news</h2>
+        </div>
+
+        <div class="cc-news-search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            id="cc-news-search"
+            placeholder="Search stories..."
+            aria-label="Search stories"
+          >
+        </div>
+
+      </div>
+
+      <div class="cc-news-results-status" id="cc-news-results-status">
+        Showing all campus stories
+      </div>
+
+      <div class="cc-campus-news-content">
+        {{ page.content }}
+      </div>
+
+      <div class="cc-news-no-results" id="cc-news-no-results" hidden>
+        <div class="cc-news-no-results-icon">⌕</div>
+        <h3>No stories found</h3>
+        <p>
+          Try another keyword or choose a different topic.
+        </p>
+        <button type="button" id="cc-news-reset">
+          Show all stories
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- EDITORIAL CTA -->
+    <section class="cc-news-cta">
+
+      <div>
+        <span class="cc-news-section-kicker">
+          CAMPUSCONNECT
+        </span>
+
+        <h2>There is always another story.</h2>
+
+        <p>
+          Stay connected with the people, ideas, achievements,
+          and events shaping our campus community.
+        </p>
+      </div>
+
+      <a href="/announcements" class="cc-news-cta-button">
+        View announcements
+        <span>→</span>
+      </a>
+
+    </section>
+
+    </div>
+  </main>
+
+  <footer class="cc-reference-footer">
+
+    <div class="cc-reference-footer-inner">
+
+      <div class="cc-footer-brand">
+
+        <span class="cc-footer-logo">C</span>
+
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+
+      </div>
+
+
+      <nav class="cc-footer-links">
+
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+
+      </nav>
+
+
+      <div class="cc-footer-platform">
+
+        <div class="cc-drupal-brand">
+
+          <img
+            src="/core/misc/logo/drupal-logo.svg"
+            alt="Drupal">
+
+          <strong>Drupal</strong>
+
+        </div>
+
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>

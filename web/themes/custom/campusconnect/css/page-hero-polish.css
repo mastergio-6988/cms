@@ -1,0 +1,243 @@
+/* Shared homepage-style hero cards for every major destination page. */
+.cc-announcements-page,
+.cc-events-page,
+.cc-departments-page,
+body:has(.cc-list-page--faculty-staff) .cc-reference-main {
+  padding-top: 14px !important;
+}
+
+.cc-announcement-hero,
+.cc-events-page .cc-hero,
+.cc-departments-page .cc-hero,
+.cc-list-page--faculty-staff .cc-people-hero,
+.cc-list-page--faculty-staff .cc-people-final-hero {
+  width: min(1425px, calc(100% - 112px)) !important;
+  margin: 0 auto 34px !important;
+  border: 1px solid #c9e6fb !important;
+  border-radius: 26px !important;
+  box-shadow: 0 18px 50px rgba(15, 74, 130, .12), 0 0 0 5px rgba(255,255,255,.72) !important;
+}
+
+.cc-events-page .cc-hero,
+.cc-departments-page .cc-hero {
+  min-height: 350px !important;
+  height: 350px !important;
+}
+
+.cc-events-page .cc-hero-content,
+.cc-departments-page .cc-hero-content {
+  width: min(1370px, calc(100% - 72px)) !important;
+}
+
+.cc-announcement-hero-image,
+.cc-events-page .cc-hero-art,
+.cc-departments-page .cc-hero-art {
+  border-radius: 0 25px 25px 0;
+  overflow: hidden;
+}
+
+.cc-list-page--faculty-staff .cc-people-hero {
+  min-height: 350px !important;
+  padding: 42px 50px !important;
+}
+
+.cc-list-page--faculty-staff .cc-people-hero-art {
+  min-height: 270px !important;
+}
+
+@media (max-width: 760px) {
+  .cc-announcements-page,
+  .cc-events-page,
+  .cc-departments-page,
+  body:has(.cc-list-page--faculty-staff) .cc-reference-main {
+    padding-top: 8px !important;
+  }
+
+  .cc-announcement-hero,
+  .cc-events-page .cc-hero,
+  .cc-departments-page .cc-hero,
+  .cc-list-page--faculty-staff .cc-people-hero,
+  .cc-list-page--faculty-staff .cc-people-final-hero {
+    width: calc(100% - 28px) !important;
+    border-radius: 20px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .cc-events-page .cc-hero,
+  .cc-departments-page .cc-hero {
+    min-height: 430px !important;
+    height: auto !important;
+  }
+
+  .cc-events-page .cc-hero-content,
+  .cc-departments-page .cc-hero-content {
+    width: calc(100% - 40px) !important;
+  }
+
+  .cc-announcement-hero-image,
+  .cc-events-page .cc-hero-art,
+  .cc-departments-page .cc-hero-art {
+    border-radius: 0 0 19px 19px;
+  }
+}
+
+/* Keep People on the same header-to-hero baseline as the other routes. */
+.cc-list-page--faculty-staff {
+  padding-top: 14px !important;
+}
+
+.cc-list-page--faculty-staff .cc-people-hero {
+  width: min(1425px, calc(100% - 112px)) !important;
+  min-height: 350px !important;
+  margin: 0 auto 34px !important;
+  padding: 42px 50px !important;
+  grid-template-columns: 1.15fr .85fr !important;
+  align-items: center !important;
+  border: 1px solid #c9e6fb !important;
+  border-radius: 26px !important;
+  box-shadow: 0 18px 50px rgba(15, 74, 130, .12), 0 0 0 5px rgba(255,255,255,.72) !important;
+}
+
+.cc-list-page--faculty-staff .cc-people-hero-image {
+  min-height: 264px !important;
+  height: 264px !important;
+  overflow: hidden !important;
+  border-radius: 0 21px 21px 0 !important;
+}
+
+.cc-list-page--faculty-staff .cc-people-hero-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 760px) {
+  .cc-list-page--faculty-staff { padding-top: 8px !important; }
+  .cc-list-page--faculty-staff .cc-people-hero {
+    width: calc(100% - 28px) !important;
+    min-height: 0 !important;
+    padding: 30px 24px !important;
+    border-radius: 20px !important;
+  }
+  .cc-list-page--faculty-staff .cc-people-hero-image {
+    height: 230px !important;
+    min-height: 230px !important;
+    border-radius: 0 0 19px 19px !important;
+  }
+}
+
+/* Events and Departments: use the same split bordered-card composition as Home. */
+.cc-events-page .cc-hero,
+.cc-departments-page .cc-hero {
+  display: grid !important;
+  grid-template-columns: 48% 52% !important;
+  align-items: stretch !important;
+  min-height: 350px !important;
+  height: 350px !important;
+  overflow: hidden !important;
+  background: linear-gradient(120deg, #eef9ff 0%, #f8fcff 55%, #dff2ff 100%) !important;
+}
+
+.cc-events-page .cc-hero::after,
+.cc-departments-page .cc-hero::after {
+  display: none !important;
+}
+
+.cc-events-page .cc-hero-content,
+.cc-departments-page .cc-hero-content {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 46px 44px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at 10% 8%, rgba(8,127,245,.13), transparent 42%), linear-gradient(120deg, #eef9ff, #f8fcff) !important;
+}
+
+.cc-events-page .cc-hero-content .cc-eyebrow,
+.cc-departments-page .cc-hero-content .cc-eyebrow {
+  color: #087ff5 !important;
+}
+
+.cc-events-page .cc-hero-content .cc-eyebrow span,
+.cc-departments-page .cc-hero-content .cc-eyebrow span {
+  background: #087ff5 !important;
+}
+
+.cc-events-page .cc-hero h1,
+.cc-departments-page .cc-hero h1 {
+  color: #073b78 !important;
+  text-shadow: none !important;
+}
+
+.cc-events-page .cc-hero p,
+.cc-departments-page .cc-hero p {
+  color: #52759b !important;
+}
+
+.cc-events-page .cc-hero-art,
+.cc-departments-page .cc-hero-art {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  inset: auto !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.cc-events-page .cc-hero-art img,
+.cc-departments-page .cc-hero-art img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  filter: saturate(1.04) contrast(.98) !important;
+}
+
+.cc-events-page .cc-hero-art img {
+  object-position: center center !important;
+}
+
+.cc-departments-page .cc-hero-art img {
+  object-position: center center !important;
+}
+
+.cc-events-page .cc-hero-art::after,
+.cc-departments-page .cc-hero-art::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg, rgba(223,242,255,.18), transparent 32%) !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 760px) {
+  .cc-events-page .cc-hero,
+  .cc-departments-page .cc-hero {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .cc-events-page .cc-hero-content,
+  .cc-departments-page .cc-hero-content {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    min-height: 330px !important;
+    padding: 34px 26px !important;
+  }
+
+  .cc-events-page .cc-hero-art,
+  .cc-departments-page .cc-hero-art {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    height: 230px !important;
+  }
+}

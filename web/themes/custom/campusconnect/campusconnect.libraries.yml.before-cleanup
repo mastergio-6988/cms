@@ -1,0 +1,15 @@
+global:
+  css:
+    theme:
+      css/style.css: {}
+      css/server-control.css: {}
+  js:
+    js/campusconnect.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+higher_education:
+  css:
+    theme:
+      css/higher-education.css: {}

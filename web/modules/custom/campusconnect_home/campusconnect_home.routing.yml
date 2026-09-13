@@ -1,0 +1,82 @@
+campusconnect_home.front:
+  path: '/campusconnect-home'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::front'
+    _title: 'CampusConnect'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.dashboard:
+  path: '/admin/campusconnect/dashboard'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectDashboardController::dashboard'
+    _title: 'CampusConnect Dashboard'
+  requirements:
+    _permission: 'access campusconnect dashboard'
+  options:
+    _admin_route: TRUE
+
+campusconnect_home.server_control:
+  path: '/admin/campusconnect/server'
+  defaults:
+    _form: '\Drupal\campusconnect_home\Form\CampusServerControlForm'
+    _title: 'Live Campus server'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+campusconnect_home.announcements:
+  path: '/announcements'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::listing'
+    _title: 'Announcements'
+    type: 'announcement'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.news:
+  path: '/campus-news'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::listing'
+    _title: 'Campus News'
+    type: 'campus_news'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.events:
+  path: '/events'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::listing'
+    _title: 'Events'
+    type: 'campus_event'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.departments:
+  path: '/departments'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::listing'
+    _title: 'Departments'
+    type: 'department'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.faculty:
+  path: '/faculty-staff'
+  defaults:
+    _controller: '\Drupal\campusconnect_home\Controller\CampusConnectHomeController::listing'
+    _title: 'Faculty & Staff'
+    type: 'faculty_staff'
+  requirements:
+    _permission: 'access content'
+
+campusconnect_home.visuals:
+  path: '/admin/campusconnect/visuals'
+  defaults:
+    _form: '\Drupal\campusconnect_home\Form\CampusConnectVisualsForm'
+    _title: 'CampusConnect Visuals'
+  requirements:
+    _permission: 'access campusconnect dashboard'
+  options:
+    _admin_route: TRUE

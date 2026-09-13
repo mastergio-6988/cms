@@ -1,0 +1,23 @@
+campus_event_stories.capstone:
+  path: '/events/bsit-capstone-orientation'
+  defaults:
+    _controller: '\Drupal\campus_event_stories\Controller\EventStoryController::capstone'
+    _title: 'BSIT Capstone Orientation'
+  requirements:
+    _permission: 'access content'
+
+campus_event_stories.workshop:
+  path: '/events/web-development-workshop'
+  defaults:
+    _controller: '\Drupal\campus_event_stories\Controller\EventStoryController::workshop'
+    _title: 'Web Development Workshop'
+  requirements:
+    _permission: 'access content'
+
+campus_event_stories.competition:
+  path: '/events/student-technology-competition'
+  defaults:
+    _controller: '\Drupal\campus_event_stories\Controller\EventStoryController::competition'
+    _title: 'Student Technology Competition'
+  requirements:
+    _permission: 'access content'

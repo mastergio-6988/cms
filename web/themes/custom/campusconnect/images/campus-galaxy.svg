@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="space" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#182d73"/>
+      <stop offset="42%" stop-color="#071b46"/>
+      <stop offset="78%" stop-color="#030b28"/>
+      <stop offset="100%" stop-color="#010519"/>
+    </radialGradient>
+
+    <radialGradient id="blueNebula" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00cfff" stop-opacity=".75"/>
+      <stop offset="38%" stop-color="#006eff" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="#001d65" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="purpleNebula" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#ff34ed" stop-opacity=".7"/>
+      <stop offset="42%" stop-color="#783cff" stop-opacity=".36"/>
+      <stop offset="100%" stop-color="#18004e" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="planet">
+      <stop offset="0%" stop-color="#4bdcff"/>
+      <stop offset="48%" stop-color="#1350bc"/>
+      <stop offset="82%" stop-color="#08194c"/>
+      <stop offset="100%" stop-color="#010615"/>
+    </radialGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#space)"/>
+
+  <ellipse cx="530" cy="350" rx="680" ry="330"
+           fill="url(#blueNebula)" filter="url(#soft)"/>
+
+  <ellipse cx="1420" cy="330" rx="720" ry="360"
+           fill="url(#purpleNebula)" filter="url(#soft)"/>
+
+  <ellipse cx="1020" cy="780" rx="900" ry="260"
+           fill="url(#blueNebula)" opacity=".45" filter="url(#soft)"/>
+
+  <g fill="#fff">
+    <circle cx="95" cy="110" r="2"/>
+    <circle cx="180" cy="265" r="1.5"/>
+    <circle cx="285" cy="145" r="2"/>
+    <circle cx="390" cy="355" r="1.5"/>
+    <circle cx="505" cy="95" r="2"/>
+    <circle cx="620" cy="235" r="1.5"/>
+    <circle cx="735" cy="135" r="2"/>
+    <circle cx="840" cy="300" r="1.5"/>
+    <circle cx="955" cy="105" r="2"/>
+    <circle cx="1075" cy="210" r="1.5"/>
+    <circle cx="1190" cy="90" r="2"/>
+    <circle cx="1310" cy="260" r="1.5"/>
+    <circle cx="1450" cy="145" r="2"/>
+    <circle cx="1570" cy="330" r="1.5"/>
+    <circle cx="1710" cy="105" r="2"/>
+    <circle cx="1830" cy="250" r="1.5"/>
+    <circle cx="120" cy="620" r="1.5"/>
+    <circle cx="245" cy="760" r="2"/>
+    <circle cx="375" cy="590" r="1.5"/>
+    <circle cx="510" cy="860" r="2"/>
+    <circle cx="680" cy="690" r="1.5"/>
+    <circle cx="805" cy="920" r="2"/>
+    <circle cx="960" cy="640" r="1.5"/>
+    <circle cx="1110" cy="870" r="2"/>
+    <circle cx="1270" cy="680" r="1.5"/>
+    <circle cx="1430" cy="910" r="2"/>
+    <circle cx="1580" cy="700" r="1.5"/>
+    <circle cx="1730" cy="850" r="2"/>
+    <circle cx="1860" cy="640" r="1.5"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <circle cx="1450" cy="280" r="170" fill="url(#planet)" opacity=".95"/>
+    <ellipse cx="1450" cy="280" rx="255" ry="45"
+             fill="none" stroke="#6bdcff" stroke-width="4" opacity=".55"
+             transform="rotate(-14 1450 280)"/>
+    <circle cx="520" cy="520" r="72" fill="url(#planet)" opacity=".9"/>
+    <circle cx="1760" cy="150" r="34" fill="url(#planet)" opacity=".8"/>
+  </g>
+
+  <path d="M0 500 C330 390 470 650 790 490 S1350 260 1920 430"
+        fill="none" stroke="#13bfff" stroke-width="38" opacity=".12"
+        filter="url(#soft)"/>
+
+  <path d="M0 500 C330 390 470 650 790 490 S1350 260 1920 430"
+        fill="none" stroke="#4e73ff" stroke-width="3" opacity=".42"/>
+
+  <path d="M0 710 C420 570 650 820 980 700 S1510 470 1920 610"
+        fill="none" stroke="#d638ff" stroke-width="45" opacity=".12"
+        filter="url(#soft)"/>
+
+  <path d="M0 710 C420 570 650 820 980 700 S1510 470 1920 610"
+        fill="none" stroke="#9d35ff" stroke-width="3" opacity=".38"/>
+</svg>

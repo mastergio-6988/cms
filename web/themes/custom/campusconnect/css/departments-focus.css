@@ -1,0 +1,181 @@
+/* =========================================================
+   CampusConnect — Departments Focus
+   Compact academic-directory layout
+   Departments page ONLY
+   ========================================================= */
+
+main {
+  background:#f6faff;
+}
+
+/* Compact department hero */
+.cc-departments-page .cc-hero,
+.cc-department-page .cc-hero,
+.cc-departments-hero {
+  min-height:330px !important;
+  padding:58px 7% !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(380px,48%) !important;
+  gap:42px !important;
+  align-items:center !important;
+  overflow:hidden !important;
+}
+
+.cc-departments-page .cc-hero h1,
+.cc-department-page .cc-hero h1,
+.cc-departments-hero h1 {
+  font-size:clamp(42px,5vw,68px) !important;
+  line-height:1 !important;
+  margin:12px 0 18px !important;
+}
+
+.cc-departments-page .cc-hero p,
+.cc-department-page .cc-hero p,
+.cc-departments-hero p {
+  max-width:680px !important;
+  font-size:17px !important;
+  line-height:1.65 !important;
+}
+
+.cc-departments-page .cc-hero-art,
+.cc-department-page .cc-hero-art,
+.cc-departments-hero img {
+  max-height:310px !important;
+}
+
+.cc-departments-page .cc-hero-art img,
+.cc-department-page .cc-hero-art img,
+.cc-departments-hero img {
+  width:100% !important;
+  height:310px !important;
+  object-fit:cover !important;
+  border-radius:24px !important;
+}
+
+/* Department listing */
+.cc-department-grid,
+.cc-departments-grid,
+.department-grid {
+  width:min(1380px,92%) !important;
+  margin:0 auto !important;
+  padding:48px 0 70px !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:26px !important;
+}
+
+/* Cards */
+.cc-department-card,
+.cc-departments-card,
+.department-card {
+  background:#fff !important;
+  border:1px solid #dbe9f7 !important;
+  border-radius:20px !important;
+  overflow:hidden !important;
+  box-shadow:0 8px 25px rgba(20,70,120,.07) !important;
+  transition:transform .2s ease,box-shadow .2s ease !important;
+}
+
+.cc-department-card:hover,
+.cc-departments-card:hover,
+.department-card:hover {
+  transform:translateY(-4px) !important;
+  box-shadow:0 14px 32px rgba(20,70,120,.12) !important;
+}
+
+/* Keep department photos controlled */
+.cc-department-card img,
+.cc-departments-card img,
+.department-card img {
+  display:block !important;
+  width:100% !important;
+  height:250px !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+
+/* Card content */
+.cc-department-card > div,
+.cc-departments-card > div,
+.department-card > div {
+  padding:24px 26px !important;
+}
+
+.cc-department-card h2,
+.cc-department-card h3,
+.cc-departments-card h2,
+.cc-departments-card h3,
+.department-card h2,
+.department-card h3 {
+  color:#0d437f !important;
+  font-size:25px !important;
+  line-height:1.2 !important;
+  margin:8px 0 12px !important;
+}
+
+.cc-department-card p,
+.cc-departments-card p,
+.department-card p {
+  color:#52759b !important;
+  font-size:15px !important;
+  line-height:1.6 !important;
+}
+
+/* Small labels */
+.cc-department-card .eyebrow,
+.cc-department-card .cc-eyebrow,
+.cc-departments-card .eyebrow,
+.cc-departments-card .cc-eyebrow,
+.department-card .eyebrow {
+  color:#0877df !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase !important;
+}
+
+/* Links */
+.cc-department-card a,
+.cc-departments-card a,
+.department-card a {
+  color:#0877df !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+
+.cc-department-card a:hover,
+.cc-departments-card a:hover,
+.department-card a:hover {
+  text-decoration:underline !important;
+}
+
+/* Responsive */
+@media (max-width:900px) {
+  .cc-departments-page .cc-hero,
+  .cc-department-page .cc-hero,
+  .cc-departments-hero {
+    grid-template-columns:1fr !important;
+    min-height:auto !important;
+    padding:42px 6% !important;
+  }
+
+  .cc-departments-page .cc-hero-art img,
+  .cc-department-page .cc-hero-art img,
+  .cc-departments-hero img {
+    height:240px !important;
+  }
+
+  .cc-department-grid,
+  .cc-departments-grid,
+  .department-grid {
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media (max-width:600px) {
+  .cc-department-card img,
+  .cc-departments-card img,
+  .department-card img {
+    height:210px !important;
+  }
+}

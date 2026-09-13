@@ -1,0 +1,36 @@
+(function (Drupal, once) {
+  Drupal.behaviors.campusConnect = {
+    attach(context) {
+
+      once('campus-menu', '.cc-menu-toggle', context).forEach((button) => {
+        button.addEventListener('click', () => {
+          const nav = document.getElementById('cc-main-nav');
+          const open = nav.classList.toggle('is-open');
+
+          button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+
+      once('campus-search', '.cc-search-button', context).forEach((button) => {
+        button.addEventListener('click', () => {
+          const panel = document.querySelector('.cc-search-panel');
+          const hidden = panel.hasAttribute('hidden');
+
+          if (hidden) {
+            panel.removeAttribute('hidden');
+
+            const input = panel.querySelector('input');
+            if (input) {
+              setTimeout(() => input.focus(), 50);
+            }
+          } else {
+            panel.setAttribute('hidden', '');
+          }
+
+          button.setAttribute('aria-expanded', hidden ? 'true' : 'false');
+        });
+      });
+
+    }
+  };
+})(Drupal, once);

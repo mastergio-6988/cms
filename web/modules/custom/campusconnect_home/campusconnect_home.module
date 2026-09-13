@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * @file
+ * Login and navigation adjustments for CampusConnect.
+ */
+
+/**
+ * Sends dashboard users to the administration area after signing in.
+ *
+ * Core normally sends a user with no requested destination to their profile.
+ * That bypasses the CampusConnect dashboard, which is where the Drupal
+ * navigation sidebar is immediately useful. Explicit destinations are always
+ * left intact.
+ */
+function campusconnect_home_form_user_login_form_alter(array &$form, FormStateInterface $form_state): void {
+  $form['#submit'][] = 'campusconnect_home_user_login_redirect';
+}
+
+/**
+ * Redirects authorised editors to the CampusConnect dashboard after login.
+ */
+function campusconnect_home_user_login_redirect(array &$form, FormStateInterface $form_state): void {
+  $request = \Drupal::request();
+
+  // Do not override a page the visitor explicitly requested before login.
+  if ($request->request->has('destination') || $request->query->has('destination')) {
+    return;
+  }
+
+  $uid = $form_state->get('uid');
+  $account = $uid ? User::load($uid) : NULL;
+  if ($account && $account->hasPermission('access campusconnect dashboard')) {
+    $form_state->setRedirect('campusconnect_home.dashboard');
+  }
+}

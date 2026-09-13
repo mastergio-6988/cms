@@ -1,0 +1,13 @@
+name: 'Academic Classic'
+type: theme
+description: 'A formal traditional university presentation theme for Campus CMS.'
+core_version_requirement: '^10 || ^11'
+base theme: false
+libraries:
+  - academic_classic/global
+regions:
+  header: Header
+  primary_menu: Primary menu
+  highlighted: Highlighted
+  content: Content
+  footer: Footer

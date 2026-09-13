@@ -1,0 +1,294 @@
+{% do attach_library('campusconnect/departments_events_style') %}
+{% do attach_library('campusconnect/departments-focus') %}
+{% do attach_library('campusconnect/departments-rebuild') %}
+
+<div class="cc-site cc-departments-page">
+
+  <header class="cc-header">
+    <div class="cc-header-inner">
+
+      <a class="cc-brand" href="{{ path('<front>') }}">
+        <span class="cc-logo">C</span>
+        <span class="cc-brand-text">
+          <strong>CampusConnect</strong>
+          <small>HIGHER EDUCATION</small>
+        </span>
+      </a>
+
+      <nav class="cc-nav" aria-label="Main navigation">
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a class="active" href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <a class="cc-search" href="/search/node">
+        <span class="cc-search-icon"></span>
+        <span>Search...</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="cc-dept-hero">
+
+      <div class="cc-dept-hero-watermark">ACADEMICS</div>
+
+      <div class="cc-dept-hero-content">
+
+        <div class="cc-dept-eyebrow">
+          <span></span>
+          CAMPUSCONNECT / EXPLORE
+          <span></span>
+        </div>
+
+        <h1>Departments</h1>
+
+        <p>
+          Explore academic departments, offices, services, programs,
+          contact points, and the people who support the university community.
+        </p>
+
+        <div class="cc-dept-pills">
+          <span>▣ &nbsp; Easy to explore</span>
+          <span>♧ &nbsp; University community</span>
+          <span>◆ &nbsp; CampusConnect</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cc-dept-section">
+
+      <div class="cc-dept-grid">
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-01-file-computer-centre-laboratory-back-view-at-obafemi-aw.jpg"
+              alt="Agricultural Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">01</span>
+            </div>
+
+            <h2>Agricultural Department</h2>
+
+            <p>
+              Explore agricultural education, practical learning,
+              sustainable development, food systems, and opportunities
+              supporting the university and surrounding community.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="agricultural">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-02-file-digital-computer-laboratory-jpg.jpg"
+              alt="Information Technology Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">02</span>
+            </div>
+
+            <h2>Information Technology Department</h2>
+
+            <p>
+              The Information Technology Department provides academic
+              programs focused on software development, networking,
+              databases, cybersecurity, information systems, and digital innovation.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="technology">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-03-file-former-computer-laboratory-tower-geograph-org-uk-1.jpg"
+              alt="Business Administration Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">03</span>
+            </div>
+
+            <h2>Business Administration Department</h2>
+
+            <p>
+              The Business Administration Department develops students'
+              knowledge and skills in management, entrepreneurship,
+              marketing, leadership, and business operations.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="business">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+        <article class="cc-dept-card">
+
+          <div class="cc-dept-image-wrap">
+            <img
+              src="/sites/default/files/campusconnect-library/departments/departments-04-file-barbara-mcclintock-1902-1992-shown-in-her-laborato.jpg"
+              alt="Education Department"
+              loading="lazy">
+            <span class="cc-dept-image-dot"></span>
+          </div>
+
+          <div class="cc-dept-card-body">
+            <div class="cc-dept-card-top">
+              <span class="cc-dept-explore">EXPLORE</span>
+              <span class="cc-dept-number">04</span>
+            </div>
+
+            <h2>Education Department</h2>
+
+            <p>
+              The Education Department prepares students for careers
+              in teaching, educational leadership, curriculum,
+              learning development, and community service.
+            </p>
+
+            <a class="cc-dept-story"
+               href="#department-story"
+               data-department="education">
+              View full story <span>→</span>
+            </a>
+
+            <div class="cc-dept-label">ACADEMIC DIRECTORY</div>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="department-story"
+       class="cc-dept-modal"
+       aria-hidden="true">
+
+    <div class="cc-dept-modal-backdrop" data-department-close></div>
+
+    <div class="cc-dept-modal-dialog"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="cc-dept-modal-title">
+
+      <button class="cc-dept-modal-close"
+              type="button"
+              data-department-close
+              aria-label="Close department story">
+        ×
+      </button>
+
+      <div class="cc-dept-modal-kicker">
+        CAMPUSCONNECT / ACADEMIC DIRECTORY
+      </div>
+
+      <div class="cc-dept-modal-layout">
+
+        <div class="cc-dept-modal-copy">
+
+          <span class="cc-dept-modal-label">EXPLORE THE DEPARTMENT</span>
+
+          <h2 id="cc-dept-modal-title"></h2>
+
+          <p class="cc-dept-modal-intro"></p>
+
+          <div class="cc-dept-modal-body"></div>
+
+          <div class="cc-dept-modal-highlights"></div>
+
+        </div>
+
+        <div class="cc-dept-modal-image-wrap">
+          <img class="cc-dept-modal-image" src="" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="cc-footer">
+    <div class="cc-footer-inner">
+
+      <div class="cc-footer-brand">
+        <span class="cc-footer-logo">C</span>
+        <div>
+          <strong>CampusConnect</strong>
+          <small>Higher education, connected.</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="{{ path('<front>') }}">Home</a>
+        <a href="/announcements">Announcements</a>
+        <a href="/campus-news">News</a>
+        <a href="/events">Events</a>
+        <a href="/departments">Departments</a>
+        <a href="/faculty-staff">People</a>
+      </nav>
+
+      <div class="cc-footer-platform">
+        <div class="cc-drupal-brand">
+          <img src="/core/misc/logo/drupal-logo.svg" alt="Drupal">
+          <strong>Drupal</strong>
+        </div>
+        <span>Drupal-powered</span>
+        <span>Accessible by design</span>
+        <span>Mobile ready</span>
+      </div>
+
+    </div>
+  </footer>
+
+</div>

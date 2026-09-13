@@ -1,0 +1,4 @@
+story:
+  css:
+    theme:
+      css/event-story.css: {}

@@ -1,0 +1,44 @@
+<article{{ attributes.addClass('cc-node') }}>
+  {% if node.bundle() == 'announcement' %}{% set content_label = 'ANNOUNCEMENT' %}{% set accent = 'announcement' %}
+  {% elseif node.bundle() == 'campus_news' %}{% set content_label = 'CAMPUS NEWS' %}{% set accent = 'news' %}
+  {% elseif node.bundle() == 'campus_event' %}{% set content_label = 'EVENT' %}{% set accent = 'event' %}
+  {% elseif node.bundle() == 'department' %}{% set content_label = 'DEPARTMENT' %}{% set accent = 'department' %}
+  {% elseif node.bundle() == 'faculty_staff' %}{% set content_label = 'FACULTY & STAFF' %}{% set accent = 'people' %}
+  {% else %}{% set content_label = 'CAMPUSCONNECT' %}{% set accent = 'default' %}{% endif %}
+
+  <header class="cc-node-header cc-node-header--{{ accent }}">
+    <div class="cc-container">
+      <span class="cc-section-label">CampusConnect / {{ content_label }}</span>
+      <h1{{ title_attributes }}>{{ label }}</h1>
+      {% if display_submitted %}<div class="cc-node-date">{{ date }}</div>{% endif %}
+    </div>
+  </header>
+
+  <div class="cc-container cc-node-layout">
+    <div class="cc-node-main">
+      {% if content.field_announcement_image %}<div class="cc-node-image">{{ content.field_announcement_image }}</div>
+      {% elseif content.field_news_image %}<div class="cc-node-image">{{ content.field_news_image }}</div>
+      {% elseif content.field_event_image %}<div class="cc-node-image">{{ content.field_event_image }}</div>
+      {% elseif content.field_department_image %}<div class="cc-node-image">{{ content.field_department_image }}</div>
+      {% elseif content.field_staff_photo %}<div class="cc-node-image">{{ content.field_staff_photo }}</div>{% endif %}
+
+      <div class="cc-node-body">{{ content.body }}</div>
+    </div>
+
+    <aside class="cc-node-meta" aria-label="Details">
+      {% if content.field_announcement_date %}<div class="cc-info-row"><span>Date</span>{{ content.field_announcement_date }}</div>{% endif %}
+      {% if content.field_news_date %}<div class="cc-info-row"><span>Published</span>{{ content.field_news_date }}</div>{% endif %}
+      {% if content.field_event_date %}<div class="cc-info-row"><span>Event date</span>{{ content.field_event_date }}</div>{% endif %}
+      {% if content.field_event_location %}<div class="cc-info-row"><span>Location</span>{{ content.field_event_location }}</div>{% endif %}
+      {% if content.field_department_head %}<div class="cc-info-row"><span>Department head</span>{{ content.field_department_head }}</div>{% endif %}
+      {% if content.field_department_email %}<div class="cc-info-row"><span>Email</span>{{ content.field_department_email }}</div>{% endif %}
+      {% if content.field_department_phone %}<div class="cc-info-row"><span>Phone</span>{{ content.field_department_phone }}</div>{% endif %}
+      {% if content.field_position %}<div class="cc-info-row"><span>Position</span>{{ content.field_position }}</div>{% endif %}
+      {% if content.field_staff_email %}<div class="cc-info-row"><span>Email</span>{{ content.field_staff_email }}</div>{% endif %}
+      {% if content.field_staff_phone %}<div class="cc-info-row"><span>Phone</span>{{ content.field_staff_phone }}</div>{% endif %}
+      {% if content.field_announcement_category %}<div class="cc-node-category">{{ content.field_announcement_category }}</div>{% endif %}
+      {% if content.field_news_category %}<div class="cc-node-category">{{ content.field_news_category }}</div>{% endif %}
+      {% if content.field_event_category %}<div class="cc-node-category">{{ content.field_event_category }}</div>{% endif %}
+    </aside>
+  </div>
+</article>

@@ -1,0 +1,798 @@
+<?php
+
+namespace Drupal\campusconnect_home\Controller;
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * Presents the CampusConnect public information hub.
+ */
+class CampusConnectHomeController extends ControllerBase {
+
+  /**
+   * Content areas shown throughout the public site.
+   */
+  private const CONTENT_AREAS = [
+    'announcement' => [
+      'title' => 'Announcements',
+      'singular' => 'announcement',
+      'label' => 'Campus notice',
+      'link' => '/announcements',
+      'image_field' => 'field_announcement_image',
+      'icon' => '✦',
+      'description' => 'Important academic, administrative, enrollment, and campus notices — clearly organized so the campus community knows what matters now.',
+    ],
+    'campus_news' => [
+      'title' => 'Campus News',
+      'singular' => 'story',
+      'label' => 'Campus story',
+      'link' => '/campus-news',
+      'image_field' => 'field_news_image',
+      'icon' => '●',
+      'description' => 'Research, student achievements, community stories, academic milestones, and the people making an impact across campus.',
+    ],
+    'campus_event' => [
+      'title' => 'Upcoming Events',
+      'singular' => 'event',
+      'label' => 'On campus',
+      'link' => '/events',
+      'image_field' => 'field_event_image',
+      'icon' => '◌',
+      'description' => 'Lectures, orientations, student activities, seminars, workshops, competitions, and community events with clear dates and locations.',
+    ],
+    'department' => [
+      'title' => 'Departments',
+      'singular' => 'department',
+      'label' => 'Explore',
+      'link' => '/departments',
+      'image_field' => 'field_department_image',
+      'icon' => '▦',
+      'description' => 'Explore academic departments, offices, services, programs, contact points, and the people who support the university community.',
+    ],
+    'faculty_staff' => [
+      'title' => 'Faculty & Staff',
+      'singular' => 'profile',
+      'label' => 'Meet our people',
+      'link' => '/faculty-staff',
+      'image_field' => 'field_staff_photo',
+      'icon' => '◒',
+      'description' => 'Meet the faculty and staff behind teaching, research, technology, administration, student services, and campus life.',
+    ],
+  ];
+
+  /**
+   * Builds the live campus landing page.
+   */
+  public function front(): array {
+    $counts = $this->getContentCounts();
+    $total_updates = $counts['announcement'] + $counts['campus_news'] + $counts['campus_event'];
+    $output = [];
+
+    $output['hero'] = [
+      '#markup' => '
+        <section class="cc-home-hero" aria-labelledby="cc-home-title">
+          <div class="cc-hero-orbit cc-hero-orbit--one" aria-hidden="true"></div>
+          <div class="cc-hero-orbit cc-hero-orbit--two" aria-hidden="true"></div>
+          <div class="cc-home-hero-inner">
+            <div class="cc-home-hero-content">
+              <div class="cc-live-label"><span></span> Campus live</div>
+              <p class="cc-hero-kicker">Everything happening, all in one place</p>
+              <h1 id="cc-home-title">The pulse of<br><em>campus life.</em></h1>
+              <p class="cc-hero-copy">Discover the moments, people, and ideas shaping your campus today. News, events, resources, and essential updates are always within reach.</p>
+              <div class="cc-hero-actions">
+                <a class="cc-button cc-button--sun" href="/announcements">Explore updates <span aria-hidden="true">→</span></a>
+                <a class="cc-button cc-button--ghost" href="/events">See what’s on <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <aside class="cc-hero-pulse" aria-label="Campus activity summary">
+              <div class="cc-hero-pulse-top">
+                <span>Campus pulse</span>
+                <span class="cc-pulse-dot" aria-hidden="true"></span>
+              </div>
+              <strong>' . $total_updates . '</strong>
+              <p>fresh updates, stories &amp; events to explore</p>
+              <div class="cc-pulse-footer">
+                <span>Always connected</span>
+                <span aria-hidden="true">↗</span>
+              </div>
+            </aside>
+          </div>
+        </section>
+      ',
+    ];
+
+    $output['journey'] = [
+      '#markup' => '
+        <section class="cc-platform-intro" aria-labelledby="cc-platform-title">
+          <div class="cc-platform-copy">
+            <span class="cc-section-label">A university information hub</span>
+            <h2 id="cc-platform-title">Everything your campus community needs to <em>stay connected.</em></h2>
+            <p>CampusConnect brings academic communication, campus stories, events, departments, and people together in one clear experience. It is designed around the everyday information needs of students, faculty, staff, applicants, families, and campus partners.</p>
+          </div>
+          <div class="cc-platform-features" aria-label="CampusConnect capabilities">
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/announcement.svg" alt=""></span><strong>Academic communication</strong><span>Clear notices, updates, and important dates.</span></article>
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/students.svg" alt=""></span><strong>Student experience</strong><span>Stories, activities, events, and campus life.</span></article>
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/people.svg" alt=""></span><strong>People &amp; expertise</strong><span>Faculty, staff, departments, and contact points.</span></article>
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/calendar.svg" alt=""></span><strong>Events &amp; calendar</strong><span>Find what is happening and plan ahead.</span></article>
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/search.svg" alt=""></span><strong>Find information</strong><span>Structured content that is easy to scan and discover.</span></article>
+            <article><span class="cc-feature-icon"><img src="/themes/custom/campusconnect/icons/campus.svg" alt=""></span><strong>Connected campus</strong><span>One consistent digital home for university information.</span></article>
+          </div>
+        </section>
+      ',
+    ];
+
+    foreach (self::CONTENT_AREAS as $type => $area) {
+      $output[$type] = $this->buildHomeSection($type, $area);
+    }
+
+    $output['snapshot'] = [
+      '#markup' => '
+        <section class="cc-campus-snapshot" aria-labelledby="cc-snapshot-title">
+          <div class="cc-snapshot-intro">
+            <span class="cc-section-label">Campus at a glance</span>
+            <h2 id="cc-snapshot-title">A digital front door for the <em>whole university.</em></h2>
+            <p>CampusConnect organizes the information people use every day — communication, academic community, events, departments, and people — while keeping the experience consistent and easy to navigate.</p>
+            <a class="cc-text-link" href="/departments">Explore university services <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cc-stats" aria-label="CampusConnect content totals">
+            <div><strong>' . $counts['announcement'] . '</strong><span>Announcements</span></div>
+            <div><strong>' . $counts['campus_news'] . '</strong><span>Campus stories</span></div>
+            <div><strong>' . $counts['campus_event'] . '</strong><span>Events to join</span></div>
+            <div><strong>' . ($counts['department'] + $counts['faculty_staff']) . '</strong><span>People &amp; places</span></div>
+          </div>
+        </section>
+      ',
+    ];
+
+    $output['closing'] = [
+      '#markup' => '
+        <section class="cc-closing-cta">
+          <div>
+            <span class="cc-section-label">Your campus, closer</span>
+            <h2>There’s always more<br>to be part of.</h2>
+          </div>
+          <a class="cc-button cc-button--dark" href="/campus-news">Read campus news <span aria-hidden="true">→</span></a>
+        </section>
+      ',
+    ];
+
+    return $output;
+  }
+
+  /**
+   * Builds a single content strip for the home page.
+   */
+  private function buildHomeSection(string $type, array $area): array {
+    $ids = $this->entityTypeManager()->getStorage('node')->getQuery()
+      ->condition('type', $type)
+      ->condition('status', 1)
+      ->accessCheck(TRUE)
+      ->sort('created', 'DESC')
+      ->range(0, 3)
+      ->execute();
+
+    $cards = [];
+    if ($ids) {
+      foreach (Node::loadMultiple($ids) as $node) {
+        $cards[] = $this->buildHomeCard($node, $type, $area);
+      }
+    }
+    else {
+      $cards[] = [
+        '#markup' => '
+          <article class="cc-home-card cc-home-card--empty">
+            <div class="cc-empty-symbol" aria-hidden="true">' . $area['icon'] . '</div>
+            <div class="cc-card-content">
+              <span class="cc-card-type">Coming soon</span>
+              <h3>More ' . Html::escape(strtolower($area['title'])) . ' are on their way.</h3>
+              <p>Check back soon for the newest campus updates.</p>
+              <a class="cc-read-more" href="' . $area['link'] . '">Explore this space <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        ',
+      ];
+    }
+
+    return [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['cc-home-section', 'cc-home-section--' . str_replace('_', '-', $type)],
+      ],
+      'heading' => [
+        '#markup' => '
+          <div class="cc-section-heading">
+            <div>
+              <span class="cc-section-label">' . Html::escape($area['label']) . '</span>
+              <h2>' . Html::escape($area['title']) . '</h2>
+            </div>
+            <a class="cc-section-link" href="' . $area['link'] . '">View all <span aria-hidden="true">→</span></a>
+          </div>
+        ',
+      ],
+      'cards' => [
+        '#type' => 'container',
+        '#attributes' => ['class' => ['cc-home-grid']],
+        'items' => $cards,
+      ],
+    ];
+  }
+
+  /**
+   * Produces a content card with a useful visual fallback for missing images.
+   */
+  private function buildHomeCard(Node $node, string $type, array $area): array {
+    $title = Html::escape($node->label());
+    $url = Html::escape($node->toUrl()->toString());
+    $summary = $this->getSummary($node, 145);
+    // ControllerBase does not expose a dateFormatter() convenience method.
+    // Use Drupal's formatter service so cards render correctly on the live site.
+    $date = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'M j, Y');
+    $image = $this->getImageMarkup($node, $area['image_field'], $type, $area['icon']);
+
+    return [
+      '#markup' => '
+        <article class="cc-home-card">
+          ' . $image . '
+          <div class="cc-card-content">
+            <div class="cc-card-meta"><span>' . Html::escape($area['label']) . '</span><time datetime="' . date('c', $node->getCreatedTime()) . '">' . Html::escape($date) . '</time></div>
+            <h3><a href="' . $url . '">' . $title . '</a></h3>
+            <p>' . Html::escape($summary) . '</p>
+            <a class="cc-read-more" href="' . $url . '">Discover more <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      ',
+    ];
+  }
+
+  /**
+   * Returns a teaser image or a deliberate visual fallback.
+   */
+  private function getImageMarkup(Node $node, string $field_name, string $type, string $icon): string {
+    if ($node->hasField($field_name) && !$node->get($field_name)->isEmpty() && $file = $node->get($field_name)->entity) {
+      $url = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+      return '<div class="cc-card-image"><img src="' . Html::escape($url) . '" alt="' . Html::escape($node->label()) . '" loading="lazy"></div>';
+    }
+
+    return '<div class="cc-card-image cc-card-image--fallback cc-card-image--' . Html::getClass($type) . '"><span aria-hidden="true">' . Html::escape($icon) . '</span></div>';
+  }
+
+  /**
+   * Extracts a compact, readable description from the node body.
+   */
+  private function getSummary(Node $node, int $limit): string {
+    if (!$node->hasField('body') || $node->get('body')->isEmpty()) {
+      return 'Explore this campus update and stay connected with what matters.';
+    }
+
+    $text = trim(preg_replace('/\s+/', ' ', strip_tags($node->get('body')->value)));
+    if (mb_strlen($text) > $limit) {
+      return mb_substr($text, 0, $limit - 1) . '…';
+    }
+    return $text;
+  }
+
+  /**
+   * Counts visible content in each public campus area.
+   */
+  private function getContentCounts(): array {
+    $counts = [];
+    $storage = $this->entityTypeManager()->getStorage('node');
+    foreach (self::CONTENT_AREAS as $type => $area) {
+      $counts[$type] = (int) $storage->getQuery()
+        ->condition('type', $type)
+        ->condition('status', 1)
+        ->accessCheck(TRUE)
+        ->count()
+        ->execute();
+    }
+    return $counts;
+  }
+
+  /**
+   * Builds a clean listing page for a campus content area.
+   */
+  public function listing(string $type): array {
+    if (!isset(self::CONTENT_AREAS[$type])) {
+      throw new NotFoundHttpException();
+    }
+
+    $area = self::CONTENT_AREAS[$type];
+    $ids = $this->entityTypeManager()->getStorage('node')->getQuery()
+      ->condition('type', $type)
+      ->condition('status', 1)
+      ->accessCheck(TRUE)
+      ->sort('created', 'DESC')
+      ->execute();
+
+    $items = [];
+    foreach (Node::loadMultiple($ids) as $node) {
+      $title = Html::escape($node->label());
+      $url = Html::escape($node->toUrl()->toString());
+      $items[] = [
+        '#markup' => '
+          <article class="cc-list-card">
+            ' . $this->getImageMarkup($node, $area['image_field'], $type, $area['icon']) . '
+            <div class="cc-list-card-content">
+              <span class="cc-card-type">' . Html::escape($area['label']) . '</span>
+              <h2><a href="' . $url . '">' . $title . '</a></h2>
+              <p>' . Html::escape($this->getSummary($node, 180)) . '</p>
+              <a class="cc-read-more" href="' . $url . '">View details <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        ',
+      ];
+    }
+
+    if (!$items) {
+      $items[] = [
+        '#markup' => '<div class="cc-list-empty"><span aria-hidden="true">' . Html::escape($area['icon']) . '</span><h2>Nothing here yet</h2><p>New ' . Html::escape($area['singular']) . ' updates will appear here soon.</p></div>',
+      ];
+    }
+
+    return [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['cc-list-page', 'cc-list-page--' . str_replace('_', '-', $type)]],
+      'header' => [
+        '#markup' => '
+          <header class="cc-list-header">
+            <span class="cc-section-label">CampusConnect / ' . Html::escape($area['label']) . '</span>
+            <h1>' . Html::escape($area['title']) . '</h1>
+            <p>' . Html::escape($area['description']) . '</p>
+            <div class="cc-list-header-pills">
+              <span>Easy to explore</span>
+              <span>University community</span>
+              <span>CampusConnect</span>
+            </div>
+          </header>
+        ',
+      ],
+      'items' => [
+        '#type' => 'container',
+        '#attributes' => ['class' => ['cc-list-grid']],
+        'content' => $items,
+      ],
+    ];
+  }
+
+
+  /**
+   * CampusConnect higher-education homepage.
+   */
+  public function higherEducation(): array {
+    return [
+      '#markup' => <<<'HTML'
+<div class="cc-he">
+
+  <section class="cc-he-hero">
+    <div>
+      <div class="cc-he-eyebrow">CampusConnect · Higher Education</div>
+
+      <h1>
+        A digital campus built for
+        <span>education.</span>
+      </h1>
+
+      <p class="cc-he-lead">
+        One connected place for academic programs, admissions, research,
+        university news, campus services, people, departments, events,
+        and the digital systems that keep your institution moving.
+      </p>
+
+      <div class="cc-he-actions">
+        <a class="cc-he-btn" href="/campus-news">Explore campus →</a>
+        <a class="cc-he-btn secondary" href="/events">Upcoming events ↗</a>
+        <a class="cc-he-btn secondary" href="/faculty-staff">University directory</a>
+      </div>
+    </div>
+
+    <div class="cc-he-panel">
+      <div>
+        <div class="cc-he-panel-label">Campus command center</div>
+        <h2>Everything your university needs.</h2>
+        <p>
+          A structured Drupal-powered experience for students, faculty,
+          researchers, staff, applicants, alumni, and the wider community.
+        </p>
+      </div>
+
+      <div class="cc-he-links">
+        <a href="/announcements">Announcements →</a>
+        <a href="/campus-news">University news →</a>
+        <a href="/events">Events & seminars →</a>
+        <a href="/departments">Departments →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cc-he-stat-grid">
+    <div class="cc-he-stat">
+      <strong>50+</strong>
+      <span>Academic programs</span>
+    </div>
+    <div class="cc-he-stat">
+      <strong>20+</strong>
+      <span>Departments & units</span>
+    </div>
+    <div class="cc-he-stat">
+      <strong>100+</strong>
+      <span>Faculty & researchers</span>
+    </div>
+    <div class="cc-he-stat">
+      <strong>24/7</strong>
+      <span>Digital campus access</span>
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Academic experience</div>
+      <h2>Discover your path through the university.</h2>
+      <p>
+        Put the information students and families need most within a few
+        clicks, from programs and admissions to academic resources and
+        campus services.
+      </p>
+    </div>
+
+    <div class="cc-he-grid">
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">⌘</div>
+        <h3>Academic Programs</h3>
+        <p>
+          Explore undergraduate, graduate, professional, and continuing
+          education opportunities.
+        </p>
+        <div class="cc-he-links">
+          <a href="/departments">Browse departments →</a>
+        </div>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">↗</div>
+        <h3>Admissions & Enrollment</h3>
+        <p>
+          Create a clear journey for applicants with requirements,
+          application information, deadlines, and enrollment resources.
+        </p>
+        <div class="cc-he-links">
+          <a href="/announcements">Admissions updates →</a>
+        </div>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">◎</div>
+        <h3>Student Services</h3>
+        <p>
+          Connect students with academic support, registrar services,
+          technology, library resources, careers, and campus life.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Research & innovation</div>
+      <h2>Turn knowledge into impact.</h2>
+      <p>
+        Give researchers, laboratories, institutes, and academic departments
+        a strong digital home for projects, publications, events, and
+        collaboration.
+      </p>
+    </div>
+
+    <div class="cc-he-feature">
+
+      <div class="cc-he-feature-card">
+        <h3>Research ecosystem</h3>
+        <p>
+          Organize research centers, faculty expertise, projects,
+          publications, laboratories, and academic initiatives in a
+          discoverable structure.
+        </p>
+        <ul class="cc-he-list">
+          <li>Research centers and institutes</li>
+          <li>Faculty expertise</li>
+          <li>Projects and publications</li>
+          <li>Seminars and academic events</li>
+        </ul>
+      </div>
+
+      <div class="cc-he-feature-card">
+        <h3>Knowledge discovery</h3>
+        <p>
+          Make academic information easier to find through structured
+          content, directories, search, categories, and connected
+          university resources.
+        </p>
+        <ul class="cc-he-list">
+          <li>People and expertise</li>
+          <li>Departments and programs</li>
+          <li>News and announcements</li>
+          <li>Events and seminars</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Campus life</div>
+      <h2>Stay connected to what's happening.</h2>
+      <p>
+        CampusConnect brings everyday university communication into one
+        searchable experience.
+      </p>
+    </div>
+
+    <div class="cc-he-grid">
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">✦</div>
+        <h3>University News</h3>
+        <p>
+          Share achievements, research discoveries, student stories,
+          institutional updates, and important notices.
+        </p>
+        <div class="cc-he-links">
+          <a href="/campus-news">Read campus news →</a>
+        </div>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">◌</div>
+        <h3>Events & Seminars</h3>
+        <p>
+          Surface lectures, conferences, orientations, workshops,
+          ceremonies, and community activities.
+        </p>
+        <div class="cc-he-links">
+          <a href="/events">View events →</a>
+        </div>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">!</div>
+        <h3>Announcements</h3>
+        <p>
+          Keep students, faculty, staff, and visitors informed with
+          important campus communications.
+        </p>
+        <div class="cc-he-links">
+          <a href="/announcements">View announcements →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Drupal foundation</div>
+      <h2>Built for a complex university environment.</h2>
+      <p>
+        CampusConnect uses Drupal's flexible content architecture as the
+        foundation for a scalable higher-education digital platform.
+      </p>
+    </div>
+
+    <div class="cc-he-grid">
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">◆</div>
+        <h3>Open & Flexible</h3>
+        <p>
+          Extend the platform as institutional requirements change instead
+          of being locked into a fixed website structure.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">⌁</div>
+        <h3>Scalable Architecture</h3>
+        <p>
+          Organize content across departments, programs, research units,
+          services, audiences, and future digital properties.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">◈</div>
+        <h3>Interoperable</h3>
+        <p>
+          Prepare the platform to communicate with student information
+          systems, learning platforms, APIs, and external services.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Security & governance</div>
+      <h2>Give every audience the right level of access.</h2>
+      <p>
+        A university website serves many audiences. CampusConnect is
+        designed around structured permissions, roles, governance, and
+        secure content management.
+      </p>
+    </div>
+
+    <div class="cc-he-feature">
+
+      <div class="cc-he-feature-card">
+        <h3>Role-based access</h3>
+        <ul class="cc-he-list">
+          <li>Students</li>
+          <li>Faculty</li>
+          <li>Researchers</li>
+          <li>Staff</li>
+          <li>Content editors</li>
+          <li>Administrators</li>
+        </ul>
+      </div>
+
+      <div class="cc-he-feature-card">
+        <h3>Digital governance</h3>
+        <ul class="cc-he-list">
+          <li>Structured publishing workflows</li>
+          <li>Controlled administrative access</li>
+          <li>Secure forms and submissions</li>
+          <li>Content ownership</li>
+          <li>Search-friendly content</li>
+          <li>Accessibility-conscious publishing</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Connected campus</div>
+      <h2>Connect the systems behind the university.</h2>
+      <p>
+        CampusConnect is designed as the public-facing digital layer of a
+        broader university technology ecosystem.
+      </p>
+    </div>
+
+    <div class="cc-he-grid">
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">↔</div>
+        <h3>Student Information</h3>
+        <p>
+          Prepare integration pathways for student records, enrollment
+          information, academic data, and institutional services.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">▣</div>
+        <h3>Learning Platforms</h3>
+        <p>
+          Connect the public university experience with learning-management
+          and academic technology platforms.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">⌘</div>
+        <h3>Single Sign-On</h3>
+        <p>
+          Provide a future-ready foundation for institutional identity,
+          Google/Microsoft authentication, and centralized access.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Discover the university</div>
+      <h2>Find people, places, programs, and knowledge.</h2>
+      <p>
+        A university-wide directory makes the institution easier to
+        understand and navigate.
+      </p>
+    </div>
+
+    <div class="cc-he-directory">
+
+      <a href="/departments">
+        <small>ACADEMICS</small>
+        Departments
+      </a>
+
+      <a href="/faculty-staff">
+        <small>PEOPLE</small>
+        Faculty & Staff
+      </a>
+
+      <a href="/events">
+        <small>CAMPUS LIFE</small>
+        Events
+      </a>
+
+      <a href="/campus-news">
+        <small>DISCOVER</small>
+        Campus News
+      </a>
+
+    </div>
+  </section>
+
+  <section class="cc-he-section">
+    <div class="cc-he-section-head">
+      <div class="kicker">Digital engagement</div>
+      <h2>Turn information into interaction.</h2>
+      <p>
+        The next layer of CampusConnect can support forms, surveys,
+        applications, feedback, service requests, and other university
+        interactions.
+      </p>
+    </div>
+
+    <div class="cc-he-grid">
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">□</div>
+        <h3>Forms & Applications</h3>
+        <p>
+          Build structured digital processes for university services,
+          requests, registrations, and applications.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">?</div>
+        <h3>Surveys & Feedback</h3>
+        <p>
+          Gather feedback from students, faculty, staff, alumni, and
+          community members.
+        </p>
+      </article>
+
+      <article class="cc-he-card">
+        <div class="cc-he-icon">⌕</div>
+        <h3>Search & SEO</h3>
+        <p>
+          Help users discover programs, people, events, departments,
+          research, and important information.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cc-he-cta">
+    <h2>Explore your campus.</h2>
+    <p>
+      CampusConnect brings academics, people, research, news, events,
+      services, and digital infrastructure together in one connected
+      university experience.
+    </p>
+
+    <div class="cc-he-actions" style="justify-content:center;">
+      <a class="cc-he-btn" href="/campus-news">Explore CampusConnect →</a>
+      <a class="cc-he-btn secondary" href="/departments">Explore academics</a>
+      <a class="cc-he-btn secondary" href="/events">See what's happening</a>
+    </div>
+  </section>
+
+</div>
+HTML,
+    ];
+  }
+
+
+}

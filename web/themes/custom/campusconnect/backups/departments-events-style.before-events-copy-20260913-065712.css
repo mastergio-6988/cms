@@ -1,0 +1,312 @@
+/* ============================================================
+   CAMPUSCONNECT DEPARTMENTS — COMPACT EVENTS-STYLE VERSION
+   Departments only. Events/News/Announcements untouched.
+   ============================================================ */
+
+body.cc-departments-page {
+  background: #f4f8fc !important;
+  color: #10213f;
+}
+
+body.cc-departments-page main {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* HEADER */
+.cc-departments-page .cc-header,
+body.cc-departments-page .cc-header {
+  background: #fff;
+}
+
+.cc-departments-page .cc-header-inner,
+body.cc-departments-page .cc-header-inner {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 34px;
+}
+
+/* HERO */
+.cc-departments-page .cc-hero,
+body.cc-departments-page .cc-hero {
+  position: relative;
+  min-height: 330px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: #dff0ff;
+}
+
+.cc-departments-page .cc-hero-content,
+body.cc-departments-page .cc-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1420px;
+  padding: 58px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cc-departments-page .cc-eyebrow,
+body.cc-departments-page .cc-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #0877e8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.cc-departments-page .cc-eyebrow span,
+body.cc-departments-page .cc-eyebrow span {
+  width: 42px;
+  height: 2px;
+  background: #0877e8;
+}
+
+.cc-departments-page .cc-hero h1,
+body.cc-departments-page .cc-hero h1 {
+  margin: 0 0 16px;
+  color: #102552;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: .98;
+  font-weight: 850;
+  letter-spacing: -.045em;
+}
+
+.cc-departments-page .cc-hero p,
+body.cc-departments-page .cc-hero p {
+  max-width: 650px;
+  margin: 0;
+  color: #5076a5;
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.cc-departments-page .cc-pills,
+body.cc-departments-page .cc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.cc-departments-page .cc-pills span,
+body.cc-departments-page .cc-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #d4e8fb;
+  border-radius: 999px;
+  background: rgba(255,255,255,.94);
+  color: #1267c2;
+  box-shadow: 0 7px 20px rgba(34,91,145,.08);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.cc-departments-page .cc-hero-art,
+body.cc-departments-page .cc-hero-art {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+}
+
+.cc-departments-page .cc-hero-art img,
+body.cc-departments-page .cc-hero-art img {
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* DEPARTMENT GRID */
+.cc-departments-page .cc-departments-section,
+body.cc-departments-page .cc-departments-section {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 34px 34px 70px;
+}
+
+.cc-departments-page .cc-department-grid,
+body.cc-departments-page .cc-department-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* CARDS */
+.cc-departments-page .cc-department-card,
+body.cc-departments-page .cc-department-card {
+  overflow: hidden;
+  border: 1px solid #dbe9f6;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(29,77,121,.09);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.cc-departments-page .cc-department-card:hover,
+body.cc-departments-page .cc-department-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(29,77,121,.14);
+}
+
+.cc-departments-page .cc-department-image,
+body.cc-departments-page .cc-department-image {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+}
+
+.cc-departments-page .cc-department-image img,
+body.cc-departments-page .cc-department-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.cc-departments-page .cc-department-card:hover .cc-department-image img,
+body.cc-departments-page .cc-department-card:hover .cc-department-image img {
+  transform: scale(1.035);
+}
+
+.cc-departments-page .cc-department-body,
+body.cc-departments-page .cc-department-body {
+  padding: 22px 24px 24px;
+}
+
+.cc-departments-page .cc-department-meta,
+body.cc-departments-page .cc-department-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #6b89aa;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .02em;
+}
+
+.cc-departments-page .cc-tag,
+body.cc-departments-page .cc-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: #e5f3ff;
+  color: #0877e8;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.cc-departments-page .cc-department-body h2,
+body.cc-departments-page .cc-department-body h2 {
+  margin: 0 0 11px;
+  color: #104b86;
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 850;
+}
+
+.cc-departments-page .cc-department-body p,
+body.cc-departments-page .cc-department-body p {
+  margin: 0;
+  min-height: 78px;
+  color: #6483a7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cc-departments-page .cc-card-footer,
+body.cc-departments-page .cc-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid #e2edf6;
+}
+
+.cc-departments-page .cc-card-footer > span,
+body.cc-departments-page .cc-card-footer > span {
+  color: #0877e8;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.cc-departments-page .cc-card-footer a,
+body.cc-departments-page .cc-card-footer a {
+  color: #0866c7;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cc-departments-page .cc-card-footer a:hover,
+body.cc-departments-page .cc-card-footer a:hover {
+  color: #004a98;
+}
+
+/* FOOTER */
+body.cc-departments-page .cc-footer {
+  margin-top: 0;
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+  .cc-departments-page .cc-department-grid,
+  body.cc-departments-page .cc-department-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cc-departments-page .cc-hero-content,
+  body.cc-departments-page .cc-hero-content {
+    padding: 45px 34px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .cc-departments-page .cc-hero,
+  body.cc-departments-page .cc-hero {
+    display: block;
+  }
+
+  .cc-departments-page .cc-hero-content,
+  body.cc-departments-page .cc-hero-content {
+    padding: 42px 22px 30px;
+  }
+
+  .cc-departments-page .cc-hero-art,
+  body.cc-departments-page .cc-hero-art {
+    min-height: 230px;
+  }
+
+  .cc-departments-page .cc-hero-art img,
+  body.cc-departments-page .cc-hero-art img {
+    min-height: 230px;
+  }
+
+  .cc-departments-page .cc-department-grid,
+  body.cc-departments-page .cc-department-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-departments-page .cc-departments-section,
+  body.cc-departments-page .cc-departments-section {
+    padding: 24px 18px 50px;
+  }
+}
